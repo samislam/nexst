@@ -4,9 +4,9 @@
   "private": true,
   "prettier": "@samislam/prettier-config/next",
   "scripts": {
-    "dev": "next dev --turbopack",
-    "build": "next build",
-    "start": "next start",
+    "dev": "dotenv -e .env.development next dev --turbopack",
+    "build": "dotenv -e .env.production next build",
+    "start": "dotenv -e .env.production next start",
     "format": "prettier --write \"./**/*.{htm,html,css,md,mdx,js,jsx,ts,tsx}\"",
     "lint": "next lint",
     "clean": "del \"**/{node_modules,.next,.turbo}\"",
