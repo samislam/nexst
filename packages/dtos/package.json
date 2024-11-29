@@ -13,7 +13,6 @@
   "devDependencies": {
     "@samislam/prettier-config": "^1.1.1",
     "@types/bun": "latest",
-    "concurrently": "^9.1.0",
     "del-cli": "^6.0.0",
     "ts-patch": "^3.2.1",
     "typescript-transform-paths": "^3.5.2"
