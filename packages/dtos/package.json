@@ -1,11 +1,11 @@
 {
   "name": "@repo/dtos",
-  "module": "./dist/index.js",
-  "type": "module",
-  "types": "./dist/dts/index.d.ts",
+  "main": "dist/index.js",
+  "types": "dist/dts/index.d.ts",
+  "private": true,
   "scripts": {
-    "dev": "concurrently --names \"bun,tspc\" \"bun build ./src/index.ts --outdir ./dist/ --watch\" \"tspc --emitDeclarationOnly --watch\"",
-    "build": "bun build ./src/index.ts --outdir ./dist/ && tspc",
+    "dev": "tspc --watch",
+    "build": "tspc",
     "format": "prettier --write \"**/*.{ts,tsx,md,js}\""
   },
   "prettier": "@samislam/prettier-config",
