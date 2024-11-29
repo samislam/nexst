@@ -6,13 +6,15 @@
   "scripts": {
     "dev": "tspc --watch",
     "build": "tspc",
-    "format": "prettier --write \"**/*.{ts,tsx,md,js}\""
+    "format": "prettier --write \"**/*.{ts,tsx,md,js}\"",
+    "clean": "del \"**/{node_modules,dist,.turbo}\""
   },
   "prettier": "@samislam/prettier-config",
   "devDependencies": {
     "@samislam/prettier-config": "^1.1.1",
     "@types/bun": "latest",
     "concurrently": "^9.1.0",
+    "del-cli": "^6.0.0",
     "ts-patch": "^3.2.1",
     "typescript-transform-paths": "^3.5.2"
   },

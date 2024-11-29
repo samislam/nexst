@@ -4,7 +4,8 @@
   "prettier": "@samislam/prettier-config",
   "scripts": {
     "dev": "concurrently --names \"merge,json-server\" \"bun run ./server/merge.ts -w\" \"json-server ./server/db.json --port 5500 \"",
-    "format": "prettier --write \"**/*.{ts,tsx,md,js}\""
+    "format": "prettier --write \"**/*.{ts,tsx,md,js}\"",
+    "clean": "del \"**/{node_modules,dist,.turbo}\""
   },
   "peerDependencies": {
     "typescript": "^5.6.3"
@@ -17,6 +18,7 @@
   "devDependencies": {
     "@samislam/prettier-config": "^1.1.1",
     "@types/bun": "latest",
-    "concurrently": "^9.1.0"
+    "concurrently": "^9.1.0",
+    "del-cli": "^6.0.0"
   }
 }

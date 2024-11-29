@@ -10,6 +10,12 @@
     "format": {
       "dependsOn": ["^format"]
     },
+    "clean": {
+      "cache": false,
+      "persistent": false,
+      "dependsOn": ["^clean"],
+      "outputs": []
+    },
     "lint": {
       "dependsOn": ["^lint"]
     },
