@@ -9,10 +9,8 @@
     "**/Thumbs.db": true,
     "**/node_modules": true,
     "**/.next": true,
-    "bun.lockb": true,
     "**/.turbo": true,
-    "apps/api/dist": true,
-    "**/.dist": true
+    "**/dist": true
   },
   "explorerExclude.backup": {}
 }

@@ -1,11 +1,6 @@
 {
   "name": "mock-server",
   "type": "module",
-  "devDependencies": {
-    "@samislam/prettier-config": "^1.1.1",
-    "@types/bun": "latest",
-    "concurrently": "^9.1.0"
-  },
   "prettier": "@samislam/prettier-config",
   "scripts": {
     "dev": "concurrently --names \"merge,json-server\" \"bun run ./server/merge.ts -w\" \"json-server ./server/db.json --port 5500 \"",
@@ -15,7 +10,13 @@
     "typescript": "^5.6.3"
   },
   "dependencies": {
-    "@types/node": "^22.9.0",
-    "json-server": "^1.0.0-beta.3"
+    "@types/node": "^22.10.1",
+    "json-server": "^1.0.0-beta.3",
+    "json5": "^2.2.3"
+  },
+  "devDependencies": {
+    "@samislam/prettier-config": "^1.1.1",
+    "@types/bun": "latest",
+    "concurrently": "^9.1.0"
   }
 }
