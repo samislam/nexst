@@ -17,7 +17,7 @@ const tolgee = TolgeeBase().init()
 export const TolgeeNextProvider = ({ locale, locales, children }: TolgeeNextProviderProps) => {
   // Synchronize SSR and client first render
   const tolgeeSSR = useTolgeeSSR(tolgee, locale, locales)
-  const useNavigate = useRouter()
+  const router = useRouter()
 
   useEffect(() => {
     const { unsubscribe } = tolgeeSSR.on('update', () => {
@@ -26,7 +26,7 @@ export const TolgeeNextProvider = ({ locale, locales, children }: TolgeeNextProv
     })
 
     return () => unsubscribe()
-  }, [tolgeeSSR, useNavigate])
+  }, [tolgeeSSR, router])
 
   return (
     <TolgeeProvider tolgee={tolgeeSSR} options={{ useSuspense: false }}>
