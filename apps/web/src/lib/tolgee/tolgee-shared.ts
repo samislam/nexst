@@ -1,6 +1,7 @@
 import appConfig from '@/config/app.config'
+import { FormatIcu } from '@tolgee/format-icu'
 import { AppLanguages } from '@/types/app-config'
-import { DevTools, Tolgee, FormatSimple, TreeTranslationsData } from '@tolgee/react'
+import { DevTools, Tolgee, TreeTranslationsData } from '@tolgee/react'
 
 export const ALL_LOCALES = appConfig.languages
 export const DEFAULT_LOCALE = appConfig.defaultLanguage
@@ -17,7 +18,7 @@ export async function getStaticData(languages: AppLanguages[]) {
 }
 
 export function TolgeeBase() {
-  return Tolgee().use(FormatSimple()).use(DevTools()).updateDefaults({
+  return Tolgee().use(FormatIcu()).use(DevTools()).updateDefaults({
     apiKey,
     apiUrl,
   })

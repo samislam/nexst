@@ -26,6 +26,7 @@
     "@radix-ui/react-slot": "^1.1.0",
     "@radix-ui/react-toggle": "^1.1.0",
     "@radix-ui/react-toggle-group": "^1.1.0",
+    "@tolgee/format-icu": "^5.32.0",
     "@tolgee/react": "^5.31.5",
     "await-to-js": "^3.0.0",
     "axios": "^1.7.8",
