@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "concurrently --names \"merge,json-server\" \"bun run ./server/merge.ts -w\" \"json-server ./server/db.json --port 5500 \"",
     "format": "prettier --write \"**/*.{ts,tsx,md,js}\"",
-    "clean": "del \"**/{node_modules,dist,.turbo}\""
+    "clean": "del \"**/{node_modules,dist,.turbo}\"",
+    "postinstall": "bun ./server/postinstall.ts"
   },
   "peerDependencies": {
     "typescript": "^5.6.3"
