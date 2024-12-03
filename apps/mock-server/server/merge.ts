@@ -41,5 +41,6 @@ fs.readdirSync(dataDir).forEach((file: string) => {
 
 // Write the combined data to db.json
 const outputPath = path.join(__dirname, 'db.json')
+if (!fs.existsSync(outputPath)) fs.writeFileSync(outputPath, '{}', 'utf8')
 fs.writeFileSync(outputPath, JSON.stringify(db, null, 2))
 console.log('Merged JSON5 files into db.json successfully!')
