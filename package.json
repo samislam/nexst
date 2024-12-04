@@ -18,7 +18,7 @@
     "start": "turbo start",
     "postinstall": "turbo postinstall",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
-    "clean": "turbo clean && del \"./{node_modules,.turbo}\""
+    "clean": "turbo clean && del \"./{node_modules,.turbo,bun.lockb}\""
   },
   "workspaces": [
     "apps/*",
