@@ -7,6 +7,7 @@ interface AppConfig<L extends string> {
   appDescription: string
   defaultLanguage: NoInfer<L>
   defaultTheme: 'light' | 'dark'
+  fallbackLanguage: NoInfer<L>
   readonly languages: Array<L>
 }
 export const createAppConfig = <L extends string>(ac: AppConfig<L>) => ac

@@ -8,4 +8,5 @@ export default createAppConfig({
   languages: ['en', 'ar', 'tr'],
   defaultLanguage: 'en',
   defaultTheme: 'light',
+  fallbackLanguage: 'en',
 })
