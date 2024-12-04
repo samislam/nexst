@@ -22,7 +22,7 @@ export const TolgeeNextProvider = ({ locale, locales, children }: TolgeeNextProv
   useEffect(() => {
     const { unsubscribe } = tolgeeSSR.on('update', () => {
       // Refresh page when there is a translation update
-      // useNavigate.refresh()
+      // router.refresh()
     })
 
     return () => unsubscribe()
