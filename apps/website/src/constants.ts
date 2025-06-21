@@ -1,0 +1,4 @@
+// # PRISMA ERROR CODES
+export const PRISMA_DUPLICATE_ERR = 'P2002'
+export const PRISMA_NOT_FOUND_ERR = 'P2025'
+export const PRISMA_REF_ERR = 'P2003'
