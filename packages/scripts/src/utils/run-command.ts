@@ -6,6 +6,7 @@ import { spawn } from 'child_process'
  */
 export const runCommand = (command: string) =>
   new Promise((resolve, reject) => {
+    console.log(command)
     const [cmd, ...args] = command.split(' ')
     const process = spawn(cmd, args, { stdio: 'inherit', shell: true })
 
