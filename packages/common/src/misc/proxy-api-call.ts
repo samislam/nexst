@@ -6,14 +6,14 @@ export type SuccessResult<T> = {
   statusCode?: number
 }
 
-export type FailureResult = {
+export type FailureResult<C extends string = string> = {
   error: string
   success: false
   statusCode?: number
-  errorCode?: string
+  errorCode?: C
 }
 
-export type ApiResult<T> = SuccessResult<T> | FailureResult
+export type ApiResult<T, C extends string = string> = SuccessResult<T> | FailureResult<C>
 
 export async function proxyApiCall<T>(apiCall: Promise<AxiosResponse<T>>): Promise<ApiResult<T>> {
   try {
