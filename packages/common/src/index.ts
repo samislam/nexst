@@ -27,6 +27,7 @@ export * from "./misc/run-seeders";
 export * from "./misc/seed-validator";
 export * from "./misc/set-query-string";
 export * from "./misc/transformers";
+export * from "./misc/unwrap-proxied-api-call";
 export * from "./type-helpers/any-class";
 export * from "./type-helpers/any-function";
 export * from "./type-helpers/extract-entity";

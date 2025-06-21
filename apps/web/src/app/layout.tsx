@@ -3,6 +3,7 @@ import localFont from 'next/font/local'
 import { PropsWithChildren } from 'react'
 import { ThemeProvider } from 'next-themes'
 import appConfig from '@/config/app.config'
+import { ClientPlugger } from './client-plugger'
 import { getStaticData } from '@/lib/tolgee/tolgee-shared'
 import { getLanguage } from '@/features/get-language.action'
 import { TolgeeNextProvider } from '@/lib/tolgee/tolgee-client'
@@ -26,6 +27,7 @@ export default async function RootLayout({ children }: PropsWithChildren) {
           >
             <TanstackQueryProvider>{children}</TanstackQueryProvider>
             <TolgeeLoadingScreen />
+            <ClientPlugger />
           </ThemeProvider>
         </body>
       </html>

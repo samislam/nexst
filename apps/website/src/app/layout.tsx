@@ -4,6 +4,7 @@ import { PropsWithChildren } from 'react'
 import { ThemeProvider } from 'next-themes'
 import appConfig from '@/config/app.config'
 import { getLocale } from 'next-intl/server'
+import { ClientPlugger } from './client-plugger'
 import { AppLanguages } from '@/types/app-config'
 import { NextIntlClientProvider } from 'next-intl'
 import { getTranslate } from '@/lib/tolgee/tolgee-server'
@@ -34,6 +35,7 @@ export default async function RootLayout(props: Props) {
             >
               <TanstackQueryProvider>{children}</TanstackQueryProvider>
               <TolgeeLoadingScreen />
+              <ClientPlugger />
             </ThemeProvider>
           </body>
         </html>
