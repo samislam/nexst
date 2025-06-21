@@ -8,6 +8,8 @@ export * from "./components/loading";
 export * from "./components/luc-icon";
 export * from "./components/material-icon";
 export * from "./components/motion";
+export * from "./hooks/use-animated-dots";
+export * from "./types/page-props";
 export * from "./types/tailwind-types";
 export * from "./utils/cn";
 export * from "./utils/create-form";

@@ -13,7 +13,7 @@ export class Tsx implements Executable {
     this.entryFile = opts.entryFile
   }
   get command() {
-    return [this.packageExecutable].join(' ')
+    return [this.packageExecutable, this.entryFileArg, this.watchArg].join(' ')
   }
   get entryFileArg() {
     return this.entryFile
