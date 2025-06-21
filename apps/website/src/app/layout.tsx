@@ -9,6 +9,7 @@ import { NextIntlClientProvider } from 'next-intl'
 import { getTranslate } from '@/lib/tolgee/tolgee-server'
 import { getStaticData } from '@/lib/tolgee/tolgee-shared'
 import { TolgeeNextProvider } from '@/lib/tolgee/tolgee-client'
+import { TolgeeLoadingScreen } from '@/components/common/tolgee-loading-screen'
 import { TanstackQueryProvider } from '@/lib/tanstack-query/tanstack-query-provider'
 import './globals.css'
 
@@ -32,6 +33,7 @@ export default async function RootLayout(props: Props) {
               defaultTheme={appConfig.defaultTheme}
             >
               <TanstackQueryProvider>{children}</TanstackQueryProvider>
+              <TolgeeLoadingScreen />
             </ThemeProvider>
           </body>
         </html>

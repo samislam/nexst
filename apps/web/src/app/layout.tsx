@@ -6,6 +6,7 @@ import appConfig from '@/config/app.config'
 import { getStaticData } from '@/lib/tolgee/tolgee-shared'
 import { getLanguage } from '@/features/get-language.action'
 import { TolgeeNextProvider } from '@/lib/tolgee/tolgee-client'
+import { TolgeeLoadingScreen } from '@/components/common/tolgee-loading-screen'
 import { TanstackQueryProvider } from '@/lib/tanstack-query/tanstack-query-provider'
 import './globals.css'
 
@@ -24,6 +25,7 @@ export default async function RootLayout({ children }: PropsWithChildren) {
             defaultTheme={appConfig.defaultTheme}
           >
             <TanstackQueryProvider>{children}</TanstackQueryProvider>
+            <TolgeeLoadingScreen />
           </ThemeProvider>
         </body>
       </html>
