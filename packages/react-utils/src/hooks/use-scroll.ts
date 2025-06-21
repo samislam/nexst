@@ -20,7 +20,6 @@ export const useScroll = (): [string | null, (idOrHash: string) => void] => {
   const scroll = useCallback((idOrHash: string) => {
     const id = idOrHash.startsWith('#') ? idOrHash.slice(1) : idOrHash
     const el = document.getElementById(id)
-    console.log({ id, el })
     if (el) {
       el.scrollIntoView({ behavior: 'smooth' })
       setCurrentSection(id)
