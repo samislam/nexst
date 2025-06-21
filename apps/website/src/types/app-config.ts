@@ -6,9 +6,10 @@ interface AppConfig<L extends string> {
   appLogo: string | StaticImageData
   appDescription: string
   defaultLanguage: NoInfer<L>
-  defaultTheme: 'light' | 'dark'
+  defaultTheme: AppThemes
   readonly languages: Array<L>
 }
 export const createAppConfig = <L extends string>(ac: AppConfig<L>) => ac
 
 export type AppLanguages = (typeof appConfig.languages)[number]
+export type AppThemes = 'light' | 'dark'
