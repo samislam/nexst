@@ -15,7 +15,7 @@ export type FailureResult<C extends string = string> = {
 
 export type ApiResult<T, C extends string = string> = SuccessResult<T> | FailureResult<C>
 
-export async function proxyApiCall<T>(apiCall: Promise<AxiosResponse<T>>): Promise<ApiResult<T>> {
+export async function apiCall<T>(apiCall: Promise<AxiosResponse<T>>): Promise<ApiResult<T>> {
   try {
     const res = await apiCall
     return {
