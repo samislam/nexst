@@ -16,9 +16,7 @@
     "tsx": "^4.19.2"
   },
   "devDependencies": {
-    "@samislam/prettier-config": "^1.1.1",
     "concurrently": "^9.1.0",
-    "del-cli": "^6.0.0",
-    "prettier": "^3.4.2"
+    "del-cli": "^6.0.0"
   }
 }

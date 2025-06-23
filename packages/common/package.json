@@ -16,13 +16,11 @@
   "license": "ISC",
   "devDependencies": {
     "@repo/typescript-config": "workspace:^",
-    "@samislam/prettier-config": "^1.1.1",
     "@types/jest": "^29.5.14",
     "barrelsby": "^2.8.1",
     "chokidar-cli": "^3.0.0",
     "concurrently": "^9.1.0",
     "jest": "^29.7.0",
-    "prettier": "^3.4.2",
     "ts-jest": "^29.2.5",
     "ts-patch": "^3.2.1",
     "tsconfig-paths": "^4.2.0",

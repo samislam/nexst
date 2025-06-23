@@ -65,7 +65,6 @@
   },
   "devDependencies": {
     "@repo/typescript-config": "workspace:^",
-    "@samislam/prettier-config": "^1.1.1",
     "@tolgee/cli": "^2.5.0",
     "@types/ms": "^2.1.0",
     "@types/react": "^18",
