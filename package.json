@@ -13,10 +13,10 @@
     "clean": "turbo clean && pnpm --filter @repo/scripts postclean && del \"./{node_modules,.turbo,pnpm-lock.yaml}\""
   },
   "devDependencies": {
-    "@samislam/prettier-config": "^1.1.6",
+    "@samislam/prettier-config": "^1.1.7",
     "@types/node": "^22.10.1",
     "del-cli": "^6.0.0",
-    "prettier": "~3.0.3",
+    "prettier": "3.0.3",
     "prettier-plugin-jsdoc": "^1.3.2",
     "prettier-plugin-tailwindcss": "^0.6.13",
     "turbo": "^2.3.0",
