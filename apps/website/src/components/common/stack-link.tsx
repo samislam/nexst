@@ -21,7 +21,9 @@ export const StackLink = (props: PropsWithChildren<StackLinkProps>) => {
 
   const finalHref =
     typeof href === 'string'
-      ? `${href}${href.includes('?') ? '&' : '?'}coming-from=${encodeURIComponent(currentUrl || fallbackUrl || '/')}`
+      ? `${href}${href.includes('?') ? '&' : '?'}coming-from=${encodeURIComponent(
+          currentUrl || fallbackUrl || '/'
+        )}`
       : href // for object URLs, you could extend logic if needed
 
   return (

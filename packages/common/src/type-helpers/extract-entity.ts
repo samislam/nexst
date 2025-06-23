@@ -9,5 +9,6 @@ import { Repository } from 'typeorm'
  *
  * @template Type The typeorm repository
  */
-export type ExtractEntity<Type extends object> =
-  Type extends Repository<infer Entity> ? Entity : never
+export type ExtractEntity<Type extends object> = Type extends Repository<infer Entity>
+  ? Entity
+  : never
