@@ -20,7 +20,9 @@ export class Concurrently implements Executable {
   }
 
   get command() {
-    return [this.packageExecutable, this.namesArg, this.prefixColorsArg, this.argsFields].join(' ')
+    return [this.packageExecutable, this.namesArg, this.prefixColorsArg, this.argsFields]
+      .filter(Boolean)
+      .join(' ')
   }
 
   get namesArg() {

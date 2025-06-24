@@ -19,7 +19,7 @@ export class TypeORM implements Executable {
     this.migrationName = opts.migrationName
   }
   get command() {
-    return [this.packageExecutable, this.modeArg, this.dataSrcFileArg].join(' ')
+    return [this.packageExecutable, this.modeArg, this.dataSrcFileArg].filter(Boolean).join(' ')
   }
   get modeArg() {
     switch (this.mode) {

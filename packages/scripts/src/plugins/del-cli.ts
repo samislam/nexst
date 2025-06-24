@@ -10,7 +10,7 @@ export class Del implements Executable {
     this.files = opts.files
   }
   get command() {
-    return [this.packageExecutable, this.filesArg].join(' ')
+    return [this.packageExecutable, this.filesArg].filter(Boolean).join(' ')
   }
   get filesArg() {
     return this.files

@@ -26,7 +26,9 @@ export class Barrel implements Executable {
       this.directoryArg,
       this.deleteArg,
       this.excludeArg,
-    ].join(' ')
+    ]
+      .filter(Boolean)
+      .join(' ')
   }
   get directoryArg() {
     return `--directory ${this.directory}`

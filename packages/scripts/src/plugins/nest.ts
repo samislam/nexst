@@ -16,7 +16,9 @@ export class Nest implements Executable {
     this.mode = opts.mode
   }
   get command() {
-    return [this.packageExecutable, this.modeArg, this.watchArg, this.debugArg].join(' ')
+    return [this.packageExecutable, this.modeArg, this.watchArg, this.debugArg]
+      .filter(Boolean)
+      .join(' ')
   }
   get modeArg() {
     return this.mode

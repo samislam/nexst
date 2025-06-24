@@ -15,7 +15,7 @@ export class Dotenv implements Executable {
   }
 
   get command() {
-    return [this.packageExecutable, this.envFileArg, this.executeArg].join(' ')
+    return [this.packageExecutable, this.envFileArg, this.executeArg].filter(Boolean).join(' ')
   }
   get envFileArg() {
     return `-e ${this.envFile}`

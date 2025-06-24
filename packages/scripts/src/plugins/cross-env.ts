@@ -13,7 +13,7 @@ export class CrossEnv implements Executable {
     this.execute = opts.execute
   }
   get command() {
-    return [this.packageExecutable, this.variablesArg, this.execute].join(' ')
+    return [this.packageExecutable, this.variablesArg, this.execute].filter(Boolean).join(' ')
   }
   get variablesArg() {
     const variablesSet = new Set()

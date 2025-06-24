@@ -13,7 +13,7 @@ export class Next implements Executable {
     this.turbo = opts.turbo
   }
   get command() {
-    return [this.packageExecutable, this.modeArg, this.turboArg].join(' ')
+    return [this.packageExecutable, this.modeArg, this.turboArg].filter(Boolean).join(' ')
   }
   get modeArg() {
     return this.mode

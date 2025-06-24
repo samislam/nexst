@@ -26,7 +26,7 @@ export class Prisma implements Executable {
     this.studioPort = opts.studioPort
   }
   get command() {
-    return [this.packageExecutable, this.modeArg].join(' ')
+    return [this.packageExecutable, this.modeArg].filter(Boolean).join(' ')
   }
   get modeArg() {
     switch (this.mode) {

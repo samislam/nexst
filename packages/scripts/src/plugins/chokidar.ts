@@ -17,7 +17,9 @@ export class Chokidar implements Executable {
     this.onChange = opts.onChange
   }
   get command(): string {
-    return [this.packageExecutable, this.watchDir, this.excludeArgs, this.onChangeArg].join(' ')
+    return [this.packageExecutable, this.watchDir, this.excludeArgs, this.onChangeArg]
+      .filter(Boolean)
+      .join(' ')
   }
   get excludeArgs() {
     return this.exclude.map((path) => `-i \'${path}\'`).join(' ')

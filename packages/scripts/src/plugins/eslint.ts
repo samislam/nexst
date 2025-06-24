@@ -13,7 +13,7 @@ export class Eslint implements Executable {
     this.fix = opts.fix
   }
   get command() {
-    return [this.packageExecutable, this.scanPathArg, this.fixArg].join(' ')
+    return [this.packageExecutable, this.scanPathArg, this.fixArg].filter(Boolean).join(' ')
   }
   get fixArg() {
     return this.fix ? '--fix' : ''

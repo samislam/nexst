@@ -13,7 +13,7 @@ export class Prettier implements Executable {
     this.ignore = opts.ignore
   }
   get command() {
-    return [this.packageExecutable, this.fileArg, this.ignoreArg].join(' ')
+    return [this.packageExecutable, this.fileArg, this.ignoreArg].filter(Boolean).join(' ')
   }
   get fileArg() {
     return `--write ${this.files.join(' ')}`

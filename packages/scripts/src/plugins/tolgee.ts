@@ -13,7 +13,7 @@ export class Tolgee implements Executable {
     this.deleteUnused = opts.removeUnused
   }
   get command() {
-    return [this.packageExecutable, this.modeArg, this.deleteUnusedArg].join(' ')
+    return [this.packageExecutable, this.modeArg, this.deleteUnusedArg].filter(Boolean).join(' ')
   }
   get modeArg() {
     return this.mode
