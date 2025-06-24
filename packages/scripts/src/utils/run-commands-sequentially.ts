@@ -6,6 +6,6 @@ import { executeSequentially } from './execute-sequentially'
  * cross-platform. This utility is based on the `runCommand` utility function, which streams the
  * stdio as well as the stderr to the stdout of the parent process (i.e it's set to inherit).
  */
-export const runCommandsSequentially = (commands: string[]) => {
-  return executeSequentially(commands.map((command) => () => runCommand(command)))
+export const runCommandsSequentially = (commands: string[], printCommands = true) => {
+  return executeSequentially(commands.map((command) => () => runCommand(command, printCommands)))
 }

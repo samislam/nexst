@@ -4,9 +4,9 @@ import { spawn } from 'child_process'
  * Runs a given command in the shell asyncronously and directly prints the stdio as the parent
  * process
  */
-export const runCommand = (command: string) =>
+export const runCommand = (command: string, printCommand = true) =>
   new Promise((resolve, reject) => {
-    console.log(command)
+    if (printCommand) console.log(command)
     const [cmd, ...args] = command.split(' ')
     const process = spawn(cmd, args, { stdio: 'inherit', shell: true })
 
