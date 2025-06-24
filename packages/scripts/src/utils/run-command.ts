@@ -4,7 +4,7 @@ import { spawn } from 'child_process'
  * Runs a given command in the shell asyncronously and directly prints the stdio as the parent
  * process
  */
-export const runCommand = (command: string, printCommand = true) =>
+export const runCommand = (command: string, printCommand = false) =>
   new Promise((resolve, reject) => {
     if (printCommand) console.log(command)
     const [cmd, ...args] = command.split(' ')
