@@ -9,6 +9,7 @@
     "test": "turbo test",
     "start": "turbo start",
     "setup": "turbo setup",
+    "build:packages": "turbo run build --filter='./packages/*'",
     "format": "turbo format && prettier --write \"./*.{ts,tsx,md}\"",
     "clean": "turbo clean && pnpm --filter @repo/scripts postclean && del \"./{node_modules,.turbo,pnpm-lock.yaml}\""
   },
