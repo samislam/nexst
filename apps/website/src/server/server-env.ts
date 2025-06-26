@@ -3,7 +3,7 @@ import { createEnv } from '@t3-oss/env-nextjs'
 
 export const serverEnv = createEnv({
   server: {
-    PORT: z.number().default(3002),
+    PORT: z.number().default(3100),
   },
   experimental__runtimeEnv: {
     PORT: process.env.PORT ? +process.env.PORT : undefined,

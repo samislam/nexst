@@ -1,8 +1,8 @@
 import chalk from 'chalk'
 import { concat } from 'concat-str'
+import { stringToNumber } from '@repo/common'
 import { select, confirm, input } from '@inquirer/prompts'
 import { Del, Dotenv, Prisma, runCommand } from '@repo/scripts'
-import { stringToNumber } from '@repo/common'
 
 async function main() {
   // Read command-line arguments
