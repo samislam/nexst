@@ -14,7 +14,8 @@ type TolgeeNextProviderProps = {
 
 const tolgee = TolgeeBase().init()
 
-export const TolgeeNextProvider = ({ locale, locales, children }: TolgeeNextProviderProps) => {
+export const TolgeeNextProvider = (props: TolgeeNextProviderProps) => {
+  const { locale, locales, children } = props
   // Synchronize SSR and client first render
   const tolgeeSSR = useTolgeeSSR(tolgee, locale, locales)
   const router = useRouter()

@@ -6,7 +6,7 @@ export default createAppConfig({
   appLogo: logo,
   appDescription: 'Starter template for Nest & Nextjs project',
   languages: ['en', 'ar', 'tr'],
-  defaultLanguage: 'en',
   defaultTheme: 'light',
+  defaultLanguage: 'en',
   fallbackLanguage: 'en',
 })

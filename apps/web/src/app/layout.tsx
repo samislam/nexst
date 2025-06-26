@@ -13,7 +13,7 @@ import './globals.css'
 
 export default async function RootLayout({ children }: PropsWithChildren) {
   const locale = await getLanguage() // # your logic to fetch the specific user locale
-  const locales = await getStaticData([appConfig.defaultLanguage, locale])
+  const locales = await getStaticData([appConfig.fallbackLanguage, locale])
 
   return (
     <TolgeeNextProvider locale={locale} locales={locales}>

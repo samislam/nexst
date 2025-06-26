@@ -1,14 +1,14 @@
 import { cache } from 'react'
 import appConfig from '@/config/app.config'
 import { getLocale } from 'next-intl/server'
-import { TolgeeBase, ALL_LOCALES, getStaticData } from './tolgee-shared'
+import { TolgeeBase, getStaticData } from './tolgee-shared'
 
 // wrapping in `cache` function will ensure
 // that we are sharing the instance within a single request
 export const getTolgeeInstance = cache(async (locale: string) => {
   const tolgee = TolgeeBase().init({
     // include all static data on the server, as the bundle size is not a concern here
-    staticData: await getStaticData(ALL_LOCALES),
+    staticData: await getStaticData(appConfig.languages),
     observerOptions: {
       // include full information about the key into the watermark
       // make sure you have newest SDK for this feature
@@ -17,6 +17,7 @@ export const getTolgeeInstance = cache(async (locale: string) => {
     // locale is already detected by next-intl package
     language: locale,
     defaultLanguage: appConfig.defaultLanguage,
+    fallbackLanguage: appConfig.fallbackLanguage,
     // providing custom fetch function, which will disable default caching
     fetch: async (input, init) => {
       return fetch(input, { ...init, next: { revalidate: 0 } })

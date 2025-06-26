@@ -5,6 +5,7 @@ import logo from '@/media/logo.png'
 export default createAppConfig({
   languages: ['en', 'ar', 'tr'],
   defaultLanguage: 'en',
+  fallbackLanguage: 'en',
   defaultTheme: 'light',
   appName: 'Nexst website template',
   appLogo: logo,

@@ -2,7 +2,7 @@ import { cookies } from 'next/headers'
 import appConfig from '@/config/app.config'
 import { AppLanguages } from '@/types/app-config'
 import { createServerInstance } from '@tolgee/react/server'
-import { TolgeeBase, ALL_LOCALES, getStaticData } from './tolgee-shared'
+import { TolgeeBase, getStaticData } from './tolgee-shared'
 
 export const { getTolgee, getTranslate, T } = createServerInstance({
   getLocale: async () => {
@@ -13,12 +13,13 @@ export const { getTolgee, getTranslate, T } = createServerInstance({
   },
   createTolgee: async (locale) =>
     TolgeeBase().init({
-      staticData: await getStaticData(ALL_LOCALES),
+      staticData: await getStaticData(appConfig.languages),
       observerOptions: {
         fullKeyEncode: true,
       },
       language: locale,
       defaultLanguage: appConfig.defaultLanguage,
+      fallbackLanguage: appConfig.fallbackLanguage,
       fetch: async (input, init) => {
         const data = await fetch(input, { ...init, next: { revalidate: 0 } })
         return data
