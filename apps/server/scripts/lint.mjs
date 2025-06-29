@@ -1,8 +1,19 @@
-import { runCommand, Eslint } from '@repo/scripts'
+import chalk from 'chalk'
+import { Echo, Eslint, runCommandsSequentially, Tspc } from '@repo/scripts'
 
-runCommand(
+runCommandsSequentially([
+  new Echo(chalk.bold.cyanBright.italic('~ Type checking your project...')).command,
+  // type checking ---------
+  new Tspc({
+    noEmit: true,
+    tsconfigPath: './tsconfig.json',
+  }).command,
+  new Echo(chalk.greenBright('✔ No type errors were found')).command,
+  new Echo(chalk.bold.cyanBright.italic('~ Eslint is now checking your project...')).command,
+  // type checking ---------
   new Eslint({
     scanPath: '{src,apps,libs,test}/**/*.ts',
-    fix: true,
-  }).command
-)
+    ext: ['.ts'],
+  }).command,
+  new Echo(chalk.bold.cyanBright.italic('~ You should be able to build your project now')).command,
+])
