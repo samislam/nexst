@@ -1,3 +1,3 @@
 export interface ErrorClassifierInterface {
-  classifier: (err: any) => void
+  classifier: (err: unknown) => void
 }

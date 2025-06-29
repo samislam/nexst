@@ -10,6 +10,7 @@ export const validateEnv = <T>(schema: ObjectSchema<T>) => {
       console.log('Error loading environment variables:')
       console.log(validationResult.error.details.map((err) => `* ${err.message}`).join('\n'))
       process.exit(-1)
+      break
     default:
       return validationResult.value
   }
