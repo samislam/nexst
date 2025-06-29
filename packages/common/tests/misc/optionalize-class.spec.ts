@@ -6,10 +6,10 @@ describe('OptionalizeClass', () => {
       e: string
     }
 
-    const OptionalizedA = OptionalizeClass(A)
+    const _OptionalizedA = OptionalizeClass(A)
 
     // Assert that OptionalizedA has optional properties
-    type OptionalizedAInstance = InstanceType<typeof OptionalizedA>
+    type OptionalizedAInstance = InstanceType<typeof _OptionalizedA>
     const instance: OptionalizedAInstance = {}
     instance.e = 'optional' // Optional assignment
     expect(instance.e).toBe('optional')
@@ -19,18 +19,15 @@ describe('OptionalizeClass', () => {
     class A {
       e: string
     }
-    class B extends A {
-      c: string
-    }
 
     const OptionalizedA = OptionalizeClass(A)
 
-    class OptionalizedB extends OptionalizedA {
+    class _OptionalizedB extends OptionalizedA {
       c: string
     }
 
     // Assert that OptionalizedB has optional 'e' and required 'c'
-    type OptionalizedBInstance = InstanceType<typeof OptionalizedB>
+    type OptionalizedBInstance = InstanceType<typeof _OptionalizedB>
     const instance: OptionalizedBInstance = { c: 'required' }
     expect(instance.c).toBe('required')
     expect(instance.e).toBeUndefined() // Optional property
@@ -42,9 +39,9 @@ describe('OptionalizeClass', () => {
   it('should not alter behavior for classes with no properties', () => {
     class Empty {}
 
-    const OptionalizedEmpty = OptionalizeClass(Empty)
+    const _OptionalizedEmpty = OptionalizeClass(Empty)
 
-    type OptionalizedEmptyInstance = InstanceType<typeof OptionalizedEmpty>
+    type OptionalizedEmptyInstance = InstanceType<typeof _OptionalizedEmpty>
     const instance: OptionalizedEmptyInstance = {}
     expect(instance).toBeDefined()
   })

@@ -33,7 +33,7 @@ export async function apiCall<T>(apiCall: Promise<AxiosResponse<T>>): Promise<Ap
   }
 }
 
-export function apiResult<T, E extends object = {}>(
+export function apiResult<T, E extends object = Record<string, unknown>>(
   params: (SuccessResult<T> & E) | (FailureResult & E)
 ): ApiResult<T> & E {
   if (params.success) {

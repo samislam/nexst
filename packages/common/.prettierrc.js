@@ -1,6 +1,6 @@
-const prettierConfig = require('@samislam/prettier-config')
+import prettierConfig from '@samislam/prettier-config'
 
-module.exports = {
+export default {
   ...prettierConfig,
   overrides: [
     {

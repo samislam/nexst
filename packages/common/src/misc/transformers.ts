@@ -7,22 +7,25 @@ export const booleanToNumber = (bool: boolean): 0 | 1 => (bool ? 1 : 0)
 /** Converts 0 or 1 to boolean */
 export const numberToBoolean = (num: 0 | 1): boolean => Boolean(num)
 /** Converts the given value only if it's not null */
-export const keepNull = (val: any, transformer: (val: any) => any) => {
+export function keepNull<T, R>(val: T | null, transformer: (val: T) => R): R | null {
   return val === null ? null : transformer(val)
 }
+
 /** Converts an enum into a its actual value defined in a map */
 export const enumToValue = <T extends { [K in keyof T]: T[K] }>(enumMap: T, value: keyof T) => {
   return enumMap[value]
 }
-/** Converts a value back into a its enum defined in a map */
-export function valueToEnum<T extends Record<string, any>, V extends T[keyof T]>(
+/** Converts a value back into its enum defined in a map */
+export function valueToEnum<T extends Record<string, unknown>, V extends T[keyof T]>(
   enumMap: T,
   value: V
-) {
+): keyof T | undefined {
   for (const [key, val] of Object.entries(enumMap)) {
-    if (val !== value) continue
-    return key as T[V]
+    if (val === value) {
+      return key as keyof T
+    }
   }
+  return undefined // in case no match
 }
 
 /** A static time format used by the DMA */

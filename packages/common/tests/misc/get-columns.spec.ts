@@ -1,5 +1,6 @@
-import { getColumns } from '@/misc/get-columns'
+import { AnyClass } from '@/index'
 import { Repository } from 'typeorm'
+import { getColumns } from '@/misc/get-columns'
 
 describe('getColumns() utility function', () => {
   it('should return columns metadata and names without filtering', () => {
@@ -11,7 +12,7 @@ describe('getColumns() utility function', () => {
       metadata: {
         columns: mockColumns,
       },
-    } as unknown as Repository<any> // Cast to match the type
+    } as unknown as Repository<AnyClass> // Cast to match the type
 
     const result = getColumns(mockRepo)
 
@@ -28,7 +29,7 @@ describe('getColumns() utility function', () => {
       metadata: {
         columns: mockColumns,
       },
-    } as unknown as Repository<any> // Cast to match the type
+    } as unknown as Repository<AnyClass> // Cast to match the type
 
     const result = getColumns(mockRepo, true)
 
@@ -45,7 +46,7 @@ describe('getColumns() utility function', () => {
       metadata: {
         columns: mockColumns,
       },
-    } as unknown as Repository<any> // Cast to match the type
+    } as unknown as Repository<AnyClass> // Cast to match the type
 
     const result = getColumns(mockRepo, true)
 
