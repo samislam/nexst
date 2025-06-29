@@ -1,13 +1,13 @@
 import { concat } from 'concat-str'
-import { createAppConfig } from '@/types/app-config'
 import logo from '@/media/logo.png'
+import { createAppConfig } from '@/types/app-config'
 
 export default createAppConfig({
-  languages: ['en', 'ar', 'tr'],
+  appLogo: logo,
+  defaultTheme: 'light',
   defaultLanguage: 'en',
   fallbackLanguage: 'en',
-  defaultTheme: 'light',
+  languages: ['en', 'ar', 'tr'],
   appName: 'Nexst website template',
-  appLogo: logo,
   appDescription: concat('@Nexst template website'),
 })
