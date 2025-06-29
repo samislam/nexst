@@ -24,6 +24,7 @@ runCommandsSequentially([
   new Tailwindcss({
     ignore: ['./src/styles.css'],
     outputFilePath: './dist/styles.css',
+    minify: true,
   }).command,
 
   new Echo(chalk.greenBright('Done') + ' Ready to use!').command,

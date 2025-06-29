@@ -9,6 +9,8 @@ export type MotionH2Props = MotionProps & React.HTMLAttributes<HTMLHeadingElemen
 export type MotionPProps = MotionProps & React.HTMLAttributes<HTMLParagraphElement>
 export type MotionAProps = MotionProps & React.AnchorHTMLAttributes<HTMLAnchorElement>
 export type MotionPathProps = MotionProps & React.SVGProps<SVGPathElement>
+export type MotionTrProps = MotionProps &
+  React.DetailedHTMLProps<React.HTMLAttributes<HTMLTableRowElement>, HTMLTableRowElement>
 
 // Export typed motion components
 export const MotionDiv = motion.div as React.FC<MotionDivProps>
@@ -17,3 +19,4 @@ export const MotionH2 = motion.h2 as React.FC<MotionH2Props>
 export const MotionP = motion.p as React.FC<MotionPProps>
 export const MotionA = motion.a as React.FC<MotionAProps>
 export const MotionPath = motion.path as React.FC<MotionPathProps>
+export const MotionTr = motion.tr as React.FC<MotionTrProps>

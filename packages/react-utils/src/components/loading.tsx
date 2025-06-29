@@ -1,28 +1,44 @@
 import clsx from 'clsx'
-import React from 'react'
-import { cn } from '../utils/cn'
-import { LibIcon, LibraryIcon } from './lib-icon'
+import { cn, LibIcon, LibraryIcon } from '@/exports'
 
 export interface LoadingProps {
   label?: string
+  thin?: boolean
   className?: string
+  horizontal?: boolean
   iconClassName?: string
   labelClassName?: string
   loadingIcon?: LibraryIcon
 }
+
 export const Loading = (props: LoadingProps) => {
-  const { label, className, loadingIcon = 'lucide:RefreshCcwIcon' } = props
-  const { iconClassName, labelClassName } = props
+  const {
+    label,
+    className,
+    thin = false,
+    iconClassName,
+    labelClassName,
+    horizontal = false,
+    loadingIcon = 'lucide:RefreshCcwIcon',
+  } = props
+
   return (
     <div
       className={clsx(
-        'flex flex-col items-center justify-center',
-        { 'gap-y-2': !!label },
+        'flex items-center',
+        horizontal ? 'flex-row gap-x-2' : 'flex-col gap-y-2',
         className
       )}
     >
-      <LibIcon icon={loadingIcon} className={cn('animate-spin', iconClassName)} />
-      <span className={cn('font-bold', labelClassName)}>{label}</span>
+      <LibIcon
+        icon={loadingIcon}
+        className={cn('animate-spin', thin ? 'h-4 w-4' : 'h-6 w-6', iconClassName)}
+      />
+      {label && (
+        <span className={cn(thin ? 'font-normal text-sm' : 'font-bold', labelClassName)}>
+          {label}
+        </span>
+      )}
     </div>
   )
 }
