@@ -2,6 +2,7 @@
   "name": "nexst",
   "private": true,
   "packageManager": "pnpm@10.12.4",
+  "prettier": "@samislam/prettier-config",
   "scripts": {
     "build": "turbo build",
     "dev": "turbo dev",
