@@ -1,11 +1,11 @@
-type AsyncTask = (...args: any[]) => Promise<any>
+type AsyncTask = (...args: unknown[]) => Promise<unknown>
 
 export const executeSequentially = async (promises: AsyncTask[]) => {
   for (const promise of promises) {
     try {
       await promise()
-    } catch (error: any) {
-      console.error(`Execution stopped due to error: ${error.message}`)
+    } catch (error: unknown) {
+      console.error(`Execution stopped due to error: ${(error as Error)?.message}`)
       break
     }
   }

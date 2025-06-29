@@ -22,9 +22,9 @@ export class Chokidar implements Executable {
       .join(' ')
   }
   get excludeArgs() {
-    return this.exclude.map((path) => `-i \'${path}\'`).join(' ')
+    return this.exclude.map((path) => `-i '${path}'`).join(' ')
   }
   get onChangeArg() {
-    return `-c \'${this.onChange}\'`
+    return `-c '${this.onChange}'`
   }
 }
