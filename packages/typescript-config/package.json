@@ -7,9 +7,13 @@
   "author": "Islam Yamor",
   "prettier": "@samislam/prettier-config",
   "scripts": {
-    "format": "prettier --write \"./*.json\""
+    "clean": "node ./scripts/clean.mjs",
+    "format": "node ./scripts/format.mjs"
   },
   "publishConfig": {
     "access": "public"
+  },
+  "dependencies": {
+    "@repo/scripts": "workspace:*"
   }
 }
