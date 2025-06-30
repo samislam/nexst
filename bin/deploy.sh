@@ -15,7 +15,7 @@ echo "[DEPLOY] Uploading environment files..."
 
 # Upload environment contents to the target server
 # * Uncomment and replace <VARIABLE_NAME> and <APP_NAME_ENV_PATH>
-# & EXAMPLE: ssh "$REMOTE_USER@$REMOTE_HOST" "cat > '$<APP_NAME_ENV_PATH>'" < "$<VARIABLE_NAME>"
+# & EXAMPLE: ssh "$REMOTE_USER@$REMOTE_HOST" "mkdir -p '$(dirname "$APP_NAME_ENV_PATH")' && cat > '$<APP_NAME_ENV_PATH>'" < "$<VARIABLE_NAME>"
 
 echo "[DEPLOY] .env files uploaded successfully."
 
