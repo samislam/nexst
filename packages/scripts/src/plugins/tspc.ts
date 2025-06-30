@@ -4,6 +4,7 @@ export interface TspcOpts {
   tsconfigPath?: string
   watch?: boolean
   noEmit?: boolean
+  preserveWatchOutput?: boolean
 }
 
 /** A script plugin for the `ts-patch` package */
@@ -12,10 +13,12 @@ export class Tspc implements Executable {
   tsconfigPath?: string
   watch?: boolean
   noEmit?: boolean
+  preserveWatchOutput?: boolean
   constructor(opts: TspcOpts = {}) {
     this.tsconfigPath = opts.tsconfigPath
     this.watch = opts.watch
     this.noEmit = opts.noEmit
+    this.preserveWatchOutput = opts.preserveWatchOutput
   }
   get tsconfigPathArg() {
     return this.tsconfigPath ? `-p ${this.tsconfigPath}` : ''
@@ -26,8 +29,17 @@ export class Tspc implements Executable {
   get noEmitArg() {
     return this.noEmit ? `--noEmit` : ''
   }
+  get preserveWatchOutputArg() {
+    return this.preserveWatchOutput ? '--preserveWatchOutput' : ''
+  }
   get command() {
-    return [this.packageExecutable, this.tsconfigPathArg, this.watchArg, this.noEmitArg]
+    return [
+      this.packageExecutable,
+      this.tsconfigPathArg,
+      this.watchArg,
+      this.noEmitArg,
+      this.preserveWatchOutputArg,
+    ]
       .filter(Boolean)
       .join(' ')
   }

@@ -7,8 +7,8 @@
   "author": "Islam Yamor",
   "prettier": "@samislam/prettier-config",
   "scripts": {
-    "clean": "node ./scripts/clean.mjs",
-    "format": "node ./scripts/format.mjs"
+    "format": "node ./scripts/format.mjs",
+    "clean": "node ./scripts/clean.mjs"
   },
   "publishConfig": {
     "access": "public"

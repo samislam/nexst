@@ -8,6 +8,7 @@
     "skipLibCheck": true,
     "declarationMap": true,
     "noUnusedLocals": false,
+    "resolveJsonModule": true,
     "moduleDetection": "force",
     "noUnusedParameters": false,
     "emitDecoratorMetadata": true,

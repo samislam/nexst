@@ -6,7 +6,7 @@ export default {
   testEnvironment: 'node',
   passWithNoTests: true,
   transform: {
-    '^.+\\.ts$': ['ts-jest', {}],
+    '^.+\\.tsx?$': ['ts-jest', {}],
   },
   moduleNameMapper: pathsToModuleNameMapper(compilerOptions.paths, {
     prefix: '<rootDir>/',
