@@ -1,0 +1,44 @@
+{
+  "name": "reverse-proxy.nexst",
+  "author": "Islam Yamor",
+  "main": "./dist/main.js",
+  "prettier": "@samislam/prettier-config",
+  "description": "Reverse-Proxy for server.nexst backend",
+  "private": true,
+  "scripts": {
+    "test": "jest",
+    "dev": "node ./scripts/dev.mjs",
+    "lint": "node ./scripts/lint.mjs",
+    "start": "node ./scripts/start.mjs",
+    "clean": "node ./scripts/clean.mjs",
+    "build": "node ./scripts/build.mjs",
+    "format": "node ./scripts/format.mjs"
+  },
+  "packageManager": "pnpm@10.12.4",
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "dotenv": "^16.6.1",
+    "envalid": "^8.0.0",
+    "express": "^5.1.0",
+    "http-proxy-middleware": "^3.0.5",
+    "ts-patch": "^3.3.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.30.0",
+    "@repo/common": "workspace:*",
+    "@repo/scripts": "workspace:*",
+    "@repo/typescript-config": "workspace:*",
+    "@types/express": "^5.0.3",
+    "@types/jest": "^29.5.14",
+    "concurrently": "^9.2.0",
+    "cross-env": "^7.0.3",
+    "eslint": "^9.30.0",
+    "jest": "^29.7.0",
+    "nodemon": "^3.1.10",
+    "ts-jest": "^29.4.0",
+    "ts-node": "^10.9.2",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.8.3",
+    "typescript-eslint": "^8.35.0"
+  }
+}
