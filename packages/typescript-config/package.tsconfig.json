@@ -10,6 +10,7 @@
     "skipLibCheck": true,
     "declarationMap": true,
     "noUnusedLocals": false,
+    "esModuleInterop": true,
     "resolveJsonModule": true,
     "moduleDetection": "force",
     "noUnusedParameters": false,
