@@ -94,19 +94,43 @@ importers:
       http-proxy-middleware:
         specifier: ^3.0.5
         version: 3.0.5
-      ts-patch:
+    devDependencies:
+      '@clscripts/cl-common':
+        specifier: ^1.0.4
+        version: 1.0.4
+      '@clscripts/concurrently':
+        specifier: ^9.2.0
+        version: 9.2.0
+      '@clscripts/cross-env':
+        specifier: ^7.0.3
+        version: 7.0.3
+      '@clscripts/del-cli':
+        specifier: ^6.0.0
+        version: 6.0.0
+      '@clscripts/echo-cli':
+        specifier: ^2.0.0
+        version: 2.0.0
+      '@clscripts/eslint':
+        specifier: ^9.30.1
+        version: 9.30.1
+      '@clscripts/nodemon':
+        specifier: ^3.1.10
+        version: 3.1.10
+      '@clscripts/prettier':
+        specifier: ^3.6.2
+        version: 3.6.2
+      '@clscripts/ts-node':
+        specifier: ^10.9.2
+        version: 10.9.2
+      '@clscripts/ts-patch':
         specifier: ^3.3.0
         version: 3.3.0
-    devDependencies:
       '@eslint/js':
         specifier: ^9.30.0
         version: 9.30.1
       '@repo/common':
         specifier: workspace:*
         version: link:../../packages/common
-      '@repo/scripts':
-        specifier: workspace:*
-        version: link:../../packages/scripts
       '@repo/typescript-config':
         specifier: workspace:*
         version: link:../../packages/typescript-config
@@ -122,8 +146,14 @@ importers:
       cross-env:
         specifier: ^7.0.3
         version: 7.0.3
+      del-cli:
+        specifier: ^6.0.0
+        version: 6.0.0
+      echo-cli:
+        specifier: ^2.0.0
+        version: 2.0.0
       eslint:
-        specifier: ^9.30.0
+        specifier: ^9.30.1
         version: 9.30.1(jiti@2.4.2)
       jest:
         specifier: ^29.7.0
@@ -131,6 +161,9 @@ importers:
       nodemon:
         specifier: ^3.1.10
         version: 3.1.10
+      prettier:
+        specifier: 3.0.3
+        version: 3.0.3
       ts-jest:
         specifier: ^29.4.0
         version: 29.4.0(@babel/core@7.28.0)(@jest/transform@29.7.0)(@jest/types@29.6.3)(babel-jest@29.7.0(@babel/core@7.28.0))(jest-util@29.7.0)(jest@29.7.0(@types/node@22.16.0))(typescript@5.8.3)
@@ -140,6 +173,12 @@ importers:
       ts-node-dev:
         specifier: ^2.0.0
         version: 2.0.0(@types/node@22.16.0)(typescript@5.8.3)
+      ts-patch:
+        specifier: ^3.3.0
+        version: 3.3.0
+      tsx:
+        specifier: ^4.20.3
+        version: 4.20.3
       typescript:
         specifier: ^5.8.3
         version: 5.8.3
@@ -1233,11 +1272,17 @@ packages:
   '@clscripts/nestjs-cli@11.0.7':
     resolution: {integrity: sha512-sSSqkW+sIq4hKuIkxSc3wsMKr7626whohpeeHrMHzv9QvKb9h0qXiWT7yT4C8qkq+WM3gEuQoQIrtzNH5mOCFA==}
 
+  '@clscripts/nodemon@3.1.10':
+    resolution: {integrity: sha512-x/Ok+/kE+7CP8FI03NurZNRDHnRND4oVV6vHAiK+MXhckZx+qZaosijYalHZ2kStllGFBktSuXcPFeADomTseg==}
+
   '@clscripts/prettier@3.6.2':
     resolution: {integrity: sha512-cLaJ2FtBLs5uWLapVN+sIAvnr0XUMcoHtQa9EUDtCXGDnQ6BH3uO+z1ljOcsmvNaxFrLjbNFM1HuPqqHm4vu0Q==}
 
   '@clscripts/prisma@6.11.1':
     resolution: {integrity: sha512-pjkSf/WytuE4sT4SephkzTS/gOfaaKBS0d9EOK1dHkWx5tDgsaEA9AjfWpUx5mRLiHaZ1a34f1sOOeFGUMjeug==}
+
+  '@clscripts/ts-node@10.9.2':
+    resolution: {integrity: sha512-KqFOBkq8iXZaWn+cmrBtr02Orx23tYKF8N8b8N7f3k+xP6r35ms15thXY0pu4OMzIld+dWJq/5ZcVtPLhdkWZg==}
 
   '@clscripts/ts-patch@3.3.0':
     resolution: {integrity: sha512-LioYMrfj1YauRU3qyr5P6bASTICDWJf8Qcv9iSPr/nkFUqBrEWCHDya6NipVxtFzdUOHkf0h85RZAcKLkKyfNA==}
@@ -8004,11 +8049,19 @@ snapshots:
     dependencies:
       '@clscripts/cl-common': 1.0.4
 
+  '@clscripts/nodemon@3.1.10':
+    dependencies:
+      '@clscripts/cl-common': 1.0.4
+
   '@clscripts/prettier@3.6.2':
     dependencies:
       '@clscripts/cl-common': 1.0.4
 
   '@clscripts/prisma@6.11.1':
+    dependencies:
+      '@clscripts/cl-common': 1.0.4
+
+  '@clscripts/ts-node@10.9.2':
     dependencies:
       '@clscripts/cl-common': 1.0.4
 

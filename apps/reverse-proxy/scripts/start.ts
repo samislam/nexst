@@ -1,4 +1,5 @@
-import { CrossEnv, runCommand } from '@repo/scripts'
+import { CrossEnv } from '@clscripts/cross-env'
+import { runCommand } from '@clscripts/cl-common'
 
 runCommand(
   new CrossEnv({

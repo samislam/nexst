@@ -1,28 +1,31 @@
-import { runCommand, TsNodeDev, Tspc, Concurrently, Nodemon, CrossEnv } from '@repo/scripts'
+import { TsNode } from '@clscripts/ts-node'
+import { Nodemon } from '@clscripts/nodemon'
+import { TsPatch } from '@clscripts/ts-patch'
+import { CrossEnv } from '@clscripts/cross-env'
+import { runCommand } from '@clscripts/cl-common'
+import { Concurrently } from '@clscripts/concurrently'
 
 runCommand(
   new CrossEnv({
-    variables: { FORCE_COLOR: 1, NODE_ENV: 'development' },
+    variables: { FORCE_COLOR: 1 },
     execute: new Nodemon({
       clear: true,
       watchPaths: ['./src'],
-      ignorePaths: ['./src/generated'],
-      ext: 'ts,tsx',
+      ignorePaths: ['./src/index.ts'],
+      ext: 'ts',
       exec: new Concurrently({
         raw: true,
-        names: ['ts-patch', 'ts-node-dev'],
+        names: ['ts-patch', 'ts-node-dev', 'barrelsby'],
         args: [
-          new Tspc({
+          new TsPatch({
             noEmit: true,
             tsconfigPath: './tsconfig.json',
             watch: true,
             preserveWatchOutput: true,
           }).command,
-          new TsNodeDev({
-            tsconfigPath: './tsconfig.json',
+          new TsNode({
             entryFile: './src/main.ts',
-            respawn: true,
-            clear: false,
+            projectPath: './tsconfig.json',
             transpileOnly: true,
           }).command,
         ],
