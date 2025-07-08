@@ -1,0 +1,37 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "extends": "./base.tsconfig.json",
+  "compilerOptions": {
+    "strict": true,
+    "baseUrl": "./",
+    "sourceMap": true,
+    "target": "ES2021",
+    "outDir": "./dist",
+    "declaration": true,
+    "incremental": true,
+    "skipLibCheck": true,
+    "module": "commonjs",
+    "noImplicitAny": true,
+    "removeComments": true,
+    "noUnusedLocals": false,
+    "esModuleInterop": true,
+    "strictNullChecks": true,
+    "resolveJsonModule": true,
+    "types": ["node", "jest"],
+    "moduleDetection": "force",
+    "noUnusedParameters": false,
+    "strictBindCallApply": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "noFallthroughCasesInSwitch": true,
+    "allowSyntheticDefaultImports": true,
+    "strictPropertyInitialization": false,
+    "forceConsistentCasingInFileNames": true,
+    "noPropertyAccessFromIndexSignature": false,
+    "paths": {
+      "@": ["src"],
+      "@/*": ["src/*"]
+    }
+  },
+  "include": ["src", "scripts"]
+}
