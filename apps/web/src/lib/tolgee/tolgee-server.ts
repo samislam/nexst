@@ -1,6 +1,6 @@
 import { cookies } from 'next/headers'
 import appConfig from '@/config/app.config'
-import { AppLanguages } from '@/types/app-config'
+import { AppLanguages } from '@/types/app.types'
 import { createServerInstance } from '@tolgee/react/server'
 import { TolgeeBase, getStaticData } from './tolgee-shared'
 

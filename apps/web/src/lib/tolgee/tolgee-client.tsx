@@ -3,7 +3,7 @@
 import { useRouter } from 'next/navigation'
 import { ReactNode, useEffect } from 'react'
 import { TolgeeBase } from './tolgee-shared'
-import { AppLanguages } from '@/types/app-config'
+import { AppLanguages } from '@/types/app.types'
 import { TolgeeProvider, TreeTranslationsData, useTolgeeSSR } from '@tolgee/react'
 
 type TolgeeNextProviderProps = {

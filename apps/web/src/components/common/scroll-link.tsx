@@ -3,7 +3,7 @@
 import Link from 'next/link'
 import { PropsWithChildren } from 'react'
 import { useScroll } from '@repo/react-utils'
-import { useFullPath } from '@/hooks/use-fullpath'
+import { useFullPath } from '@repo/react-utils'
 
 /** Props for the {@link ScrollLink} component. */
 export interface ScrollLinkProps extends PropsWithChildren {

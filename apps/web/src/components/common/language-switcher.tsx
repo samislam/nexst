@@ -2,8 +2,8 @@
 
 import { useTolgee } from '@tolgee/react'
 import { useEffect, useState } from 'react'
+import { AppLanguages } from '@/types/app.types'
 import { SyriaFlag } from '../icons/syria-flag'
-import { AppLanguages } from '@/types/app-config'
 import { CanadaFlag } from '../icons/canada-flag'
 import { TurkieyeFlag } from '../icons/turkieye-flag'
 import { changeLanguage } from '@/features/change-language.action'
