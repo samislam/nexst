@@ -1,4 +1,4 @@
-import * as chalk from 'chalk'
+import chalk from 'chalk'
 import { existsSync } from 'fs'
 import { config as configDotenv } from 'dotenv'
 import { cleanEnv, host, port, str } from 'envalid'
