@@ -1,6 +1,6 @@
 import appConfig from '@/config/app.config'
 import { getStaticData } from './tolgee-shared'
-import { AppLanguages } from '@/types/app-config'
+import { AppLanguages } from '@/types/app.types'
 import { getRequestConfig } from 'next-intl/server'
 import type { AbstractIntlMessages } from 'next-intl'
 

@@ -1,6 +1,6 @@
 import appConfig from '@/config/app.config'
 import { FormatIcu } from '@tolgee/format-icu'
-import { AppLanguages } from '@/types/app-config'
+import { AppLanguages } from '@/types/app.types'
 import { DevTools, Tolgee, TreeTranslationsData } from '@tolgee/react'
 
 const apiKey = process.env.NEXT_PUBLIC_TOLGEE_API_KEY

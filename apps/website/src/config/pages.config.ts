@@ -1,4 +1,4 @@
-import { PageDef } from '@/types/pagedef'
+import { PagesDefs } from '@/types/pagedef.types'
 
 export const pageDefs = {
   home: {
@@ -6,4 +6,4 @@ export const pageDefs = {
     icon: 'mdi:mdiHome',
     href: '/',
   },
-} as const satisfies { [k: string]: PageDef }
+} as const satisfies PagesDefs

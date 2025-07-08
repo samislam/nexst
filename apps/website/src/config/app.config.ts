@@ -1,6 +1,6 @@
 import { concat } from 'concat-str'
 import logo from '@/media/logo.png'
-import { createAppConfig } from '@/types/app-config'
+import { createAppConfig } from '@/types/app.types'
 
 export default createAppConfig({
   appLogo: logo,

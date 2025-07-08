@@ -2,7 +2,7 @@
 
 import { useTolgee } from '@tolgee/react'
 import { useEffect, useTransition } from 'react'
-import { AppLanguages } from '@/types/app-config'
+import { AppLanguages } from '@/types/app.types'
 import { useParams, usePathname, useRouter } from 'next/navigation'
 
 export const useLocale = () => {

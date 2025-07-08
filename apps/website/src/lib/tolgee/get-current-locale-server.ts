@@ -1,6 +1,6 @@
 import { cookies } from 'next/headers'
 import appConfig from '@/config/app.config'
-import { AppLanguages } from '@/types/app-config'
+import { AppLanguages } from '@/types/app.types'
 
 /**
  * Returns the current locale (language code) to be used server-side from the `locale` cookie if
