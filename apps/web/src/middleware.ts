@@ -1,10 +1,6 @@
-import { NextResponse } from 'next/server'
+import { middlewareStack } from 'nextjs-middleware-stack'
 
-const entryMiddleware = async () => {
-  return NextResponse.next()
-}
-
-export default entryMiddleware
+export default middlewareStack([])
 
 export const config = {
   matcher: [
