@@ -1,4 +1,7 @@
-import { runCommand, Concurrently, Tsx, JsonServer } from '@repo/scripts'
+import { Tsx } from '@clscripts/tsx'
+import { runCommand } from '@clscripts/cl-common'
+import { JsonServer } from '@clscripts/json-server'
+import { Concurrently } from '@clscripts/concurrently'
 
 runCommand(
   new Concurrently({

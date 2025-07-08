@@ -1,20 +1,28 @@
 {
   "name": "mock-server.nexst",
+  "description": "",
   "type": "module",
+  "license": "MIT",
+  "author": "Islam Yamor",
   "prettier": "@samislam/prettier-config",
   "scripts": {
-    "dev": "node ./scripts/dev.mjs",
-    "setup": "node ./scripts/setup.mjs",
-    "clean": "node ./scripts/clean.mjs",
-    "format": "node ./scripts/format.mjs"
+    "dev": "tsx ./scripts/dev.ts",
+    "setup": "tsx ./scripts/setup.ts",
+    "clean": "tsx ./scripts/clean.ts",
+    "format": "tsx ./scripts/format.ts"
   },
   "dependencies": {
-    "@repo/scripts": "workspace:^",
+    "@clscripts/cl-common": "^1.0.4",
     "common-es": "^1.0.1",
     "json-server": "^1.0.0-beta.3",
     "json5": "^2.2.3"
   },
   "devDependencies": {
+    "@clscripts/concurrently": "^9.2.0",
+    "@clscripts/del-cli": "^6.0.0",
+    "@clscripts/json-server": "^1.0.0",
+    "@clscripts/prettier": "^3.6.2",
+    "@clscripts/tsx": "^4.20.3",
     "concurrently": "^9.1.0",
     "del-cli": "^6.0.0",
     "tsx": "^4.19.2"
