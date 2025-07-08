@@ -1,14 +1,15 @@
 import chalk from 'chalk'
 import { concat } from 'concat-str'
 import { stringToNumber } from '@repo/common'
+import { DotenvCli } from '@clscripts/dotenv-cli'
+import { runCommand } from '@clscripts/cl-common'
+import { Prisma, PrismaRunMode } from '@clscripts/prisma'
 import { select, confirm, input } from '@inquirer/prompts'
-import { Del, Dotenv, Prisma, runCommand } from '@repo/scripts'
 
 async function main() {
   // Read command-line arguments
   const args = process.argv.slice(2) // Ignore "node" and script filename
-  /** @type {import('@repo/scripts').PrismaRunMode | 'clean'} */
-  let mode = /** @type {any} */ (args[0]) // e.g., "migrate" or "studio"
+  let mode: PrismaRunMode = args[0] as PrismaRunMode // e.g., "migrate" or "studio"
   if (!mode)
     mode = await select({
       message: 'Choose an operation for the Prisma CLI to execute:',
@@ -59,11 +60,6 @@ async function main() {
           description: 'Validates your schema.prisma file',
         },
         {
-          name: 'Clean',
-          value: 'clean',
-          description: 'Fixes issues when the generated client is corrupted',
-        },
-        {
           name: 'Studio',
           value: 'studio',
           description: 'Opens a web-based interface to view and edit data',
@@ -107,18 +103,8 @@ async function main() {
       )
   }
 
-  if (mode === 'clean') {
-    console.log('Deleting node_modules/.prisma...')
-    await runCommand(
-      new Del({
-        files: ['node_modules/.prisma', 'prisma/migrations', 'prisma/client'],
-      }).command
-    )
-    mode = 'generate'
-  }
-
   runCommand(
-    new Dotenv({
+    new DotenvCli({
       envFile: '.env.development',
       execute: new Prisma({
         mode,
