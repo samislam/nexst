@@ -3,12 +3,10 @@
   "extends": "./base.tsconfig.json",
   "compilerOptions": {
     "strict": true,
-    "baseUrl": "./",
     "sourceMap": true,
     "target": "ES2021",
-    "outDir": "./dist",
     "declaration": true,
-    "incremental": true,
+    "incremental": false,
     "skipLibCheck": true,
     "module": "commonjs",
     "noImplicitAny": true,
@@ -17,7 +15,6 @@
     "esModuleInterop": true,
     "strictNullChecks": true,
     "resolveJsonModule": true,
-    "types": ["node", "jest"],
     "moduleDetection": "force",
     "noUnusedParameters": false,
     "strictBindCallApply": true,
@@ -27,11 +24,6 @@
     "allowSyntheticDefaultImports": true,
     "strictPropertyInitialization": false,
     "forceConsistentCasingInFileNames": true,
-    "noPropertyAccessFromIndexSignature": false,
-    "paths": {
-      "@": ["src"],
-      "@/*": ["src/*"]
-    }
-  },
-  "include": ["src", "scripts"]
+    "noPropertyAccessFromIndexSignature": false
+  }
 }
