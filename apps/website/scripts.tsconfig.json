@@ -1,0 +1,11 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "rootDir": "scripts",
+    "outDir": "dist/scripts",
+    "incremental": false
+  },
+  "include": ["scripts/**/*"],
+  "exclude": ["node_modules", ".next", "dist"]
+}

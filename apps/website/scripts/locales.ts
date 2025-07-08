@@ -1,10 +1,10 @@
 import { concat } from 'concat-str'
-import { runCommand, Tolgee } from '@repo/scripts'
+import { runCommand } from '@clscripts/cl-common'
 import { select, confirm } from '@inquirer/prompts'
+import { TolgeeCli, TolgeeRunMode } from '@clscripts/tolgee-cli'
 
 async function main() {
-  /** @type {import('@repo/scripts').TolgeeRunMode} */
-  const mode = await select({
+  const mode = await select<TolgeeRunMode>({
     message: 'Choose an operation for the Tolgee-cli to execute:',
     choices: [
       {
@@ -42,7 +42,7 @@ async function main() {
   }
 
   runCommand(
-    new Tolgee({
+    new TolgeeCli({
       mode,
       removeUnused,
     }).command
