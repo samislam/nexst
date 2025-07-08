@@ -7,7 +7,7 @@ import { Concurrently } from '@clscripts/concurrently'
 
 runCommand(
   new CrossEnv({
-    variables: { FORCE_COLOR: 1 },
+    variables: { FORCE_COLOR: 1, NODE_ENV: 'development' },
     execute: new Nodemon({
       clear: true,
       watchPaths: ['./src'],

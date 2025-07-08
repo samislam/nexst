@@ -9,13 +9,14 @@
     "test": "jest",
     "dev": "tsx ./scripts/dev.ts",
     "lint": "tsx ./scripts/lint.ts",
-    "start": "tsx ./scripts/start.ts",
     "clean": "tsx ./scripts/clean.ts",
     "build": "tsx ./scripts/build.ts",
-    "format": "tsx ./scripts/format.ts"
+    "format": "tsx ./scripts/format.ts",
+    "start": "node ./dist/scripts/start.js"
   },
   "packageManager": "pnpm@10.12.4",
   "dependencies": {
+    "@clscripts/nestjs-cli": "^11.0.7",
     "chalk": "^4.1.2",
     "dotenv": "^16.6.1",
     "envalid": "^8.0.0",

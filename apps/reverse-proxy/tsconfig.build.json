@@ -1,8 +1,7 @@
 {
-  "extends": "@repo/typescript-config/server-project.tsconfig.json",
+  "extends": "@repo/typescript-config/nest.tsconfig.json",
   "compilerOptions": {
-    "rootDir": "src",
-    "baseUrl": "src",
+    "rootDir": ".",
     "outDir": "dist",
     "types": ["jest", "node"],
     "paths": {
@@ -13,5 +12,5 @@
       { "transform": "typescript-transform-paths", "afterDeclarations": true }
     ]
   },
-  "include": ["./src/**/*.ts", "./env.d.ts"]
+  "include": ["./src/**/*.ts", "./scripts/**/*.ts", "./env.d.ts"]
 }
