@@ -5,7 +5,6 @@
     "strict": true,
     "sourceMap": true,
     "target": "ES2021",
-    "declaration": true,
     "incremental": false,
     "skipLibCheck": true,
     "module": "commonjs",

@@ -1,6 +1,6 @@
 import './server/read-env'
+import express from 'express'
 import * as chalk from 'chalk'
-import * as express from 'express'
 import { applicationRouter } from './routing'
 
 const { HOST, PORT, PROXY_TARGET } = process.env
