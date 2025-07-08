@@ -2,15 +2,6 @@
   "$schema": "https://turbo.build/schema.json",
   "ui": "tui",
   "tasks": {
-    "build": {
-      "dependsOn": ["^build"],
-      "inputs": ["$TURBO_DEFAULT$", ".env*"],
-      "outputs": [".next/**", "!.next/cache/**", "dist/**"]
-    },
-    "setup": {
-      "dependsOn": ["^setup"],
-      "cache": true
-    },
     "format": {
       "dependsOn": ["^format"]
     },
@@ -23,8 +14,18 @@
     "lint": {
       "dependsOn": ["^lint"]
     },
-    "check-types": {
-      "dependsOn": ["^check-types"]
+    "test": {
+      "dependsOn": ["^test"],
+      "cache": false
+    },
+    "setup": {
+      "dependsOn": ["^setup"],
+      "cache": true
+    },
+    "build": {
+      "dependsOn": ["^build"],
+      "inputs": ["$TURBO_DEFAULT$", ".env*"],
+      "outputs": [".next/**", "!.next/cache/**", "dist/**"]
     },
     "dev": {
       "dependsOn": ["^build"],
@@ -33,10 +34,6 @@
     },
     "start": {
       "persistent": true
-    },
-    "test": {
-      "dependsOn": ["^test"],
-      "cache": false
     }
   }
 }
