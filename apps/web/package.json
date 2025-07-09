@@ -23,7 +23,7 @@
   "dependencies": {
     "@repo/dtos": "workspace:^",
     "@repo/common": "workspace:^",
-    "@repo/react-utils": "workspace:^", 
+    "@repo/react-utils": "workspace:^",
     "@clscripts/next": "^15.3.5",
     "@clscripts/cl-common": "^1.0.4",
     "@clscripts/dotenv-cli": "^8.0.1",
@@ -90,7 +90,7 @@
     "ts-patch": "^3.3.0",
     "dotenv-cli": "^7.4.4",
     "tailwindcss": "^3.4.17",
-    "autoprefixer": "^10.4.21", 
+    "autoprefixer": "^10.4.21",
     "eslint-config-next": "^15.3.4"
   }
 }
