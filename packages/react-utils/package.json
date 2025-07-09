@@ -14,7 +14,8 @@
     "lint": "tsx ./scripts/lint.ts",
     "clean": "tsx ./scripts/clean.ts",
     "build": "tsx ./scripts/build.ts",
-    "format": "tsx ./scripts/format.ts"
+    "format": "tsx ./scripts/format.ts",
+    "build:packages": "pnpm run build"
   },
   "dependencies": {
     "@mdi/js": "^7.4.47",

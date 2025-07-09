@@ -7,13 +7,15 @@
   "private": true,
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
+  "prettier": "@samislam/prettier-config",
   "scripts": {
     "test": "jest",
     "dev": "tsx ./scripts/dev.ts",
     "lint": "tsx ./scripts/lint.ts",
     "clean": "tsx ./scripts/clean.ts",
     "build": "tsx ./scripts/build.ts",
-    "format": "tsx ./scripts/format.ts"
+    "format": "tsx ./scripts/format.ts",
+    "build:packages": "pnpm run build"
   },
   "devDependencies": {
     "@repo/typescript-config": "workspace:^",
