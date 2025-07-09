@@ -1,7 +1,7 @@
 {
   "extends": "@repo/typescript-config/package.tsconfig.json",
   "compilerOptions": {
-    "types": ["jest"],
+    "types": ["node", "jest"],
     "paths": {
       "@/*": ["./src/*"]
     },
