@@ -18,7 +18,7 @@ export function TolgeeBase() {
   return Tolgee().use(FormatIcu()).use(DevTools()).updateDefaults({
     apiKey,
     apiUrl,
-    fallbackLanguage: appConfig.fallbackLanguage,
     defaultLanguage: appConfig.defaultLanguage,
+    fallbackLanguage: appConfig.fallbackLanguage,
   })
 }
