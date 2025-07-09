@@ -2,31 +2,35 @@ import { registerDecorator } from 'class-validator'
 import type { ValidationOptions, ValidationArguments } from 'class-validator'
 
 /**
- * Creates a conditional validation decorator that applies a constraint only if a specified condition is met.
+ * Creates a conditional validation decorator that applies a constraint only if a specified
+ * condition is met.
+ *
+ * @example
+ *   ```typescript
+ *   const IsStringIf = conditionalizeValidator(
+ *   'isStringIf',
+ *   ({ value }) => typeof value === 'string',
+ *   () => `$property must be a string`
+ *   );
+ *
+ *   class ExampleClass {
+ *   @IsStringIf((obj) => obj.someCondition)
+ *   someProperty: string;
+ *   }
+ *   ```
  *
  * @template Z - Type of the optional user argument.
  * @param {string} name - The name of the custom validation.
- * @param {(args: ValidationArguments, userArg: Z) => boolean} constraint - The constraint function that determines validity.
- * @param {(args: ValidationArguments, userArg: Z) => string} defaultMessage - Function to generate the default error message.
+ * @param {(args: ValidationArguments, userArg: Z) => boolean} constraint - The constraint function
+ *   that determines validity.
+ * @param {(args: ValidationArguments, userArg: Z) => string} defaultMessage - Function to generate
+ *   the default error message.
  * @returns {<T extends object = object, Y extends keyof T = keyof T>(
  *   condition: (object: T, value: T[Y]) => boolean | void,
  *   userArg?: Z,
  *   validationOptions?: ValidationOptions
- * ) => PropertyDecorator} A function that creates a property decorator based on the condition.
- *
- * @example
- * ```typescript
- * const IsStringIf = conditionalizeValidator(
- *   'isStringIf',
- *   ({ value }) => typeof value === 'string',
- *   () => `$property must be a string`
- * );
- *
- * class ExampleClass {
- *   @IsStringIf((obj) => obj.someCondition)
- *   someProperty: string;
- * }
- * ```
+ * ) => PropertyDecorator}
+ *   A function that creates a property decorator based on the condition.
  */
 export const conditionalizeValidator =
   <Z = unknown>(
