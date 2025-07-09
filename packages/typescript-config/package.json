@@ -7,8 +7,8 @@
   "private": true,
   "prettier": "@samislam/prettier-config",
   "scripts": {
-    "format": "tsx ./scripts/format.ts",
-    "clean": "tsx ./scripts/clean.ts"
+    "clean": "tsx ./scripts/clean.ts",
+    "format": "tsx ./scripts/format.ts"
   },
   "devDependencies": {
     "@clscripts/del-cli": "^6.0.0",

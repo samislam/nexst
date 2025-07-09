@@ -17,20 +17,26 @@
     "format": "tsx ./scripts/format.ts",
     "build:packages": "pnpm run build"
   },
+  "dependencies": {
+    "chalk": "4",
+    "axios": "^1.10.0",
+    "typeorm": "^0.3.20",
+    "class-validator": "^0.14.1",
+    "class-transformer": "^0.5.1"
+  },
   "devDependencies": {
     "@repo/typescript-config": "workspace:^",
-    "@clscripts/barrelsby": "^2.8.1",
-    "@clscripts/chokidar": "^4.0.4",
-    "@clscripts/cl-common": "^1.0.4",
-    "@clscripts/concurrently": "^9.2.0",
-    "@clscripts/cross-env": "^7.0.3",
     "@clscripts/del-cli": "^6.0.0",
-    "@clscripts/echo-cli": "^2.0.0",
     "@clscripts/eslint": "^9.30.1",
+    "@clscripts/echo-cli": "^2.0.0",
     "@clscripts/nodemon": "^3.1.10",
     "@clscripts/prettier": "^3.6.2",
     "@clscripts/ts-node": "^10.9.2",
     "@clscripts/ts-patch": "^3.3.0",
+    "@clscripts/barrelsby": "^2.8.1",
+    "@clscripts/cl-common": "^1.0.4",
+    "@clscripts/cross-env": "^7.0.3",
+    "@clscripts/concurrently": "^9.2.0",
     "@types/jest": "^29.5.14",
     "@eslint/js": "^9.30.0",
     "tsx": "^4.20.3",
@@ -44,17 +50,9 @@
     "barrelsby": "^2.8.1",
     "cross-env": "^7.0.3",
     "typescript": "^5.8.3",
-    "chokidar-cli": "^3.0.0",
     "concurrently": "^9.2.0",
     "tsconfig-paths": "^4.2.0",
     "typescript-eslint": "^8.35.0",
     "typescript-transform-paths": "^3.5.2"
-  },
-  "dependencies": {
-    "chalk": "4",
-    "axios": "^1.10.0",
-    "typeorm": "^0.3.20",
-    "class-validator": "^0.14.1",
-    "class-transformer": "^0.5.1"
   }
 }
