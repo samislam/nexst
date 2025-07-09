@@ -1,4 +1,5 @@
-import { Prettier, runCommandsSequentially } from '@repo/scripts'
+import { Prettier } from '@clscripts/prettier'
+import { runCommandsSequentially } from '@clscripts/cl-common'
 
 runCommandsSequentially([
   new Prettier({
