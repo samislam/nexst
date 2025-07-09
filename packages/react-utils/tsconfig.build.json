@@ -5,10 +5,7 @@
   "compilerOptions": {
     "rootDir": "./src",
     "outDir": "./dist",
-    "declarationDir": "./dist",
-    "declaration": true,
-    "sourceMap": true,
-    "declarationMap": true
+    "declarationDir": "./dist"
   },
   "exclude": ["tests", "node_modules"]
 }

@@ -2,6 +2,7 @@
   "extends": "@repo/typescript-config/react.tsconfig.json",
   "compilerOptions": {
     "noEmit": false,
+    "declaration": true,
     "incremental": false,
     "types": ["jest", "node"],
     "paths": {
