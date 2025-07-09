@@ -1,19 +1,20 @@
 {
   "name": "@repo/typescript-config",
-  "version": "1.0.0",
   "description": "The extendable Monorepo's TypeScript shared base configuration files",
-  "private": true,
-  "license": "ISC",
+  "version": "1.0.0",
   "author": "Islam Yamor",
+  "license": "MIT",
+  "private": true,
   "prettier": "@samislam/prettier-config",
   "scripts": {
-    "format": "node ./scripts/format.mjs",
-    "clean": "node ./scripts/clean.mjs"
+    "format": "tsx ./scripts/format.ts",
+    "clean": "tsx ./scripts/clean.ts"
   },
-  "publishConfig": {
-    "access": "public"
-  },
-  "dependencies": {
-    "@repo/scripts": "workspace:*"
+  "devDependencies": {
+    "@clscripts/del-cli": "^6.0.0",
+    "@clscripts/prettier": "^3.6.2",
+    "@clscripts/cl-common": "^1.0.4",
+    "tsx": "^4.20.3",
+    "del-cli": "^6.0.0"
   }
 }
