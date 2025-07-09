@@ -1,10 +1,11 @@
 import React from 'react'
 import Link from 'next/link'
+import { BackButton } from '@repo/react-utils'
+import { Button } from '@/components/ui/button'
 import { pageDefs } from '@/config/pages.config'
 import AppIcon from '@/components/common/app-icon'
 import { ArrowLeftIcon, HomeIcon } from 'lucide-react'
 import { getTranslate } from '@/lib/tolgee/tolgee-server'
-import { BackButton } from '@/components/common/back-button'
 
 const NotFoundPage = async () => {
   const t = await getTranslate()
@@ -34,9 +35,11 @@ const NotFoundPage = async () => {
             <HomeIcon className="h-5 w-5 transition-transform group-hover:scale-110" />
             <span>{t('@t<back-to-home>')}</span>
           </Link>
-          <BackButton className="bg-emerald-50 dark:bg-emerald-700">
-            <ArrowLeftIcon className="h-5 w-5 text-gray-800 transition-transform group-hover:translate-x-[-4px] dark:text-white" />
-            <span className="text-gray-800 dark:text-white">{t('@t<go-back>')}</span>
+          <BackButton>
+            <Button className="group flex items-center space-x-2 rounded-lg bg-emerald-50 bg-white/10 px-6 py-6 text-white transition-colors hover:bg-white/20 dark:bg-emerald-700">
+              <ArrowLeftIcon className="h-5 w-5 text-gray-800 transition-transform group-hover:translate-x-[-4px] dark:text-white" />
+              <span className="text-gray-800 dark:text-white">{t('@t<go-back>')}</span>
+            </Button>
           </BackButton>
         </div>
       </div>
