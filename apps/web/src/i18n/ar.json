@@ -1,6 +1,12 @@
 {
-  "@t<change-theme>": "تغيير سمة التطبيق",
+  "@t<arabic>": "العربية",
+  "@t<back-to-home>": "العودة إلى الصفحة الرئيسية",
+  "@t<description_homepage>": "وصف الموقع",
+  "@t<english>": "العربية",
+  "@t<go-back>": "ارجع",
   "@t<home>": "الصفحة الرئيسية",
-  "@t<login>": "تسجيل الدخول",
-  "@t<starter-description>": "هذا القالب المبدئي تم إنشاؤه باستخدام حزمة @samislam/nexst"
+  "@t<not-found-page-description>": "قد تكون الصفحة التي تبحث عنها قد تم نقلها أو حذفها أو ربما لم تكن موجودة في المقام الأول.\n\n",
+  "@t<not-found-page-title>": "عذرًا! هذه الصفحة غير موجودة",
+  "@t<title_homepage>": "قالب موقع Nexst",
+  "@t<turkish>": "التركية"
 }

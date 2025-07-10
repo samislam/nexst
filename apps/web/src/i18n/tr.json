@@ -1,6 +1,12 @@
 {
-  "@t<change-theme>": "Uygulama temasını değiştir",
+  "@t<arabic>": "Arapça",
+  "@t<back-to-home>": "Ana sayfaya dön",
+  "@t<description_homepage>": "Web sitesi açıklaması",
+  "@t<english>": "İngilizce",
+  "@t<go-back>": "Geri dön",
   "@t<home>": "Ana Sayfa",
-  "@t<login>": "Giriş",
-  "@t<starter-description>": "Bu, @samislam/nexst paketi ile oluşturulmuş bir başlangıç şablonudur..."
+  "@t<not-found-page-description>": "Aradığınız sayfa taşınmış, silinmiş veya hiç var olmamış olabilir.\n\n",
+  "@t<not-found-page-title>": "Hata! Bu sayfa uçup gitmiş\n\n",
+  "@t<title_homepage>": "Nexst web sitesi şablonu",
+  "@t<turkish>": "Türkçe"
 }

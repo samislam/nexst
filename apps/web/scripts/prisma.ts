@@ -1,4 +1,5 @@
 import chalk from 'chalk'
+import { existsSync } from 'fs'
 import { concat } from 'concat-str'
 import { stringToNumber } from '@repo/common'
 import { DotenvCli } from '@clscripts/dotenv-cli'
@@ -7,6 +8,15 @@ import { Prisma, PrismaRunMode } from '@clscripts/prisma'
 import { select, confirm, input } from '@inquirer/prompts'
 
 async function main() {
+  const nodeEnv = process.env.NODE_ENV ?? 'development'
+  const possibleEnvFiles = [`.env.${nodeEnv}.local`, '.env.local', `.env.${nodeEnv}`, '.env']
+  const dotenvFile = possibleEnvFiles.find((file) => existsSync(file))
+  if (!dotenvFile) {
+    console.error("You don't have any environment file specified, please define one first!")
+    process.exit(-1)
+  }
+  console.log(chalk.cyanBright('Using environment file: '), chalk.bold.greenBright(dotenvFile))
+
   // Read command-line arguments
   const args = process.argv.slice(2) // Ignore "node" and script filename
   let mode: PrismaRunMode = args[0] as PrismaRunMode // e.g., "migrate" or "studio"
@@ -105,7 +115,7 @@ async function main() {
 
   runCommand(
     new DotenvCli({
-      envFile: '.env.development',
+      envFile: dotenvFile,
       execute: new Prisma({
         mode,
         forceReset,

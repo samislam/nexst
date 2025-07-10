@@ -10,6 +10,7 @@ function isAppLanguage(lang: string): lang is AppLanguages {
 
 export default getRequestConfig(async ({ requestLocale }) => {
   let locale = await requestLocale
+  console.log(locale)
 
   if (!locale || !isAppLanguage(locale)) locale = appConfig.defaultLanguage
   const safeLocale = locale as AppLanguages

@@ -7,7 +7,12 @@ export default createAppConfig({
   defaultTheme: 'light',
   defaultLanguage: 'en',
   fallbackLanguage: 'en',
-  appName: 'Nexst starter',
   languages: ['en', 'ar', 'tr'],
-  appDescription: concat('@Nexst template website'),
+  appName: 'Nexst website template',
+  appDescription: concat('@Nexst web template'),
+  localeRoutingDef: {
+    localePrefix: {
+      mode: 'never',
+    },
+  },
 })
