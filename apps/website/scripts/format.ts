@@ -1,8 +1,8 @@
 import { Prettier } from '@clscripts/prettier'
-import { runCommandsSequentially } from '@clscripts/cl-common'
+import { runCommand } from '@clscripts/cl-common'
 
-runCommandsSequentially([
+runCommand(
   new Prettier({
     files: ['./**/*.{htm,html,css,md,mdx,js,jsx,ts,tsx}'],
-  }).command,
-])
+  }).command
+)
