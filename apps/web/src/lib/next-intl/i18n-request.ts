@@ -1,23 +1,24 @@
 import appConfig from '@/config/app.config'
-import { getStaticData } from './tolgee-shared'
 import { AppLanguages } from '@/types/app.types'
 import { getRequestConfig } from 'next-intl/server'
 import type { AbstractIntlMessages } from 'next-intl'
+import { getStaticData } from '../tolgee/tolgee-shared'
 
-function isAppLanguage(lang: string): lang is AppLanguages {
-  return appConfig.languages.includes(lang as AppLanguages)
-}
-
+/** This function is indirectly getting called by the next.config.ts file */
 export default getRequestConfig(async ({ requestLocale }) => {
   let locale = await requestLocale
-  console.log(locale)
 
   if (!locale || !isAppLanguage(locale)) locale = appConfig.defaultLanguage
   const safeLocale = locale as AppLanguages
   const messages = (await getStaticData([safeLocale]))[safeLocale] as AbstractIntlMessages
 
+  const appFormattersDef = await appConfig.formattersDefaults?.(requestLocale)
+
   return {
-    locale: safeLocale,
     messages,
+    locale: safeLocale,
+    ...appFormattersDef,
   }
 })
+
+const isAppLanguage = (lang: string) => appConfig.languages.includes(lang as AppLanguages)
