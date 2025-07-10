@@ -1,19 +1,10 @@
-import appConfig from './config/app.config'
-import { defineRouting } from 'next-intl/routing'
 import createMiddleware from 'next-intl/middleware'
 import { middlewareStack } from 'nextjs-middleware-stack'
+import { appRoutingDef } from './lib/next-intl/app-routing-def'
 
 export default middlewareStack([
-  [
-    '*',
-    createMiddleware(
-      defineRouting({
-        locales: appConfig.languages,
-        defaultLocale: appConfig.defaultLanguage,
-        ...appConfig.localeRoutingDef,
-      })
-    ),
-  ],
+  ['*', createMiddleware(appRoutingDef)],
+  // ... your other middlewares
 ])
 
 export const config = {
