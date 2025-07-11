@@ -16,34 +16,38 @@ async function main() {
   }
   console.log(chalk.cyanBright('Using environment file: '), chalk.bold.greenBright(dotenvFile))
 
-  const mode = await select<TolgeeRunMode>({
-    message: 'Choose an operation for the Tolgee-cli to execute:',
-    choices: [
-      {
-        name: 'Push locales',
-        value: 'push',
-        description: 'Pushes translations to Tolgee',
-      },
-      {
-        name: 'Pull locales',
-        value: 'pull',
-        description: 'Pulls translations from Tolgee',
-      },
-      {
-        name: 'Compare locales',
-        value: 'compare',
-        description: 'Compares the keys in your code project and in the Tolgee project.',
-      },
-      {
-        name: 'Sync locales',
-        value: 'sync',
-        description: concat(
-          'Synchronizes the keys in your code project and in the Tolgee project,',
-          'by creating missing keys and optionally'
-        ),
-      },
-    ],
-  })
+  // Read command-line arguments
+  const args = process.argv.slice(2) // Ignore "node" and script filename
+  let mode: TolgeeRunMode = args[0] as TolgeeRunMode // e.g., "pull" or "compare"
+  if (!mode)
+    mode = await select<TolgeeRunMode>({
+      message: 'Choose an operation for the Tolgee-cli to execute:',
+      choices: [
+        {
+          name: 'Push locales',
+          value: 'push',
+          description: 'Pushes translations to Tolgee',
+        },
+        {
+          name: 'Pull locales',
+          value: 'pull',
+          description: 'Pulls translations from Tolgee',
+        },
+        {
+          name: 'Compare locales',
+          value: 'compare',
+          description: 'Compares the keys in your code project and in the Tolgee project.',
+        },
+        {
+          name: 'Sync locales',
+          value: 'sync',
+          description: concat(
+            'Synchronizes the keys in your code project and in the Tolgee project,',
+            'by creating missing keys and optionally'
+          ),
+        },
+      ],
+    })
 
   let removeUnused = false
   if (mode === 'sync') {
