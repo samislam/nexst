@@ -1,4 +1,3 @@
-import type { Metadata } from 'next'
 import localFont from 'next/font/local'
 import { PropsWithChildren } from 'react'
 import { ThemeProvider } from 'next-themes'
@@ -6,8 +5,9 @@ import appConfig from '@/config/app.config'
 import { getLocale } from 'next-intl/server'
 import { ClientPlugger } from './client-plugger'
 import { AppLanguages } from '@/types/app.types'
+import { pageDefs } from '@/config/pages.config'
 import { NextIntlClientProvider } from 'next-intl'
-import { getTranslate } from '@/lib/tolgee/tolgee-server'
+import { MetadataGenerateFn } from '@repo/react-utils'
 import { getStaticData } from '@/lib/tolgee/tolgee-shared'
 import { TolgeeNextProvider } from '@/lib/tolgee/tolgee-client'
 import { TolgeeLoadingScreen } from '@/components/common/tolgee-loading-screen'
@@ -56,10 +56,4 @@ const geistMono = localFont({
   weight: '100 900',
 })
 
-export const generateMetadata = async (): Promise<Metadata> => {
-  const t = await getTranslate()
-  return {
-    title: t('@t<title_homepage>'),
-    description: t('@t<description_homepage>'),
-  }
-}
+export const generateMetadata: MetadataGenerateFn = pageDefs.home.meta
