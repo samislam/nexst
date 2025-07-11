@@ -1,9 +1,11 @@
 import { LibraryIcon } from '@repo/react-utils'
+import { Metadata } from 'next'
 
 export interface PageDef {
   href: string
   title?: string
   label: string
+  meta?: () => Metadata | Promise<Metadata> | Metadata
   /**
    * You can find more icons at:
    *
