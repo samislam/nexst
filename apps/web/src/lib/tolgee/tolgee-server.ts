@@ -1,11 +1,12 @@
 import { cache } from 'react'
 import appConfig from '@/config/app.config'
 import { getLocale } from 'next-intl/server'
+import { AppLanguages } from '@/types/app.types'
 import { TolgeeBase, getStaticData } from './tolgee-shared'
 
 // wrapping in `cache` function will ensure
 // that we are sharing the instance within a single request
-export const getTolgeeInstance = cache(async (locale: string) => {
+export const getTolgeeInstance = cache(async (locale: AppLanguages) => {
   const tolgee = TolgeeBase().init({
     // include all static data on the server, as the bundle size is not a concern here
     staticData: await getStaticData(appConfig.languages),
@@ -30,7 +31,7 @@ export const getTolgeeInstance = cache(async (locale: string) => {
 })
 
 export const getTolgee = async () => {
-  const locale = await getLocale()
+  const locale = (await getLocale()) as AppLanguages
   const tolgee = await getTolgeeInstance(locale)
   return tolgee
 }
