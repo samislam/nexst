@@ -12,7 +12,7 @@ export default getRequestConfig(async ({ requestLocale }) => {
   const safeLocale = locale as AppLanguages
   const messages = (await getStaticData([safeLocale]))[safeLocale] as AbstractIntlMessages
 
-  const appFormattersDef = await appConfig.formattersDefaults?.(requestLocale)
+  const appFormattersDef = await appConfig.i18nFormattersDefaults?.(requestLocale)
 
   return {
     messages,
