@@ -4,6 +4,7 @@ import { Metadata } from 'next'
 export interface PageDef {
   href: string
   title?: string
+  description?: string
   label?: string
   meta?: () => Metadata | Promise<Metadata> | Metadata
   /**
