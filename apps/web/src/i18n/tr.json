@@ -4,6 +4,7 @@
   "@t<error-page-help-line>": "Sorun devam ederse, lütfen site yöneticisine başvurun.",
   "@t<error-page-title>": "Hata!",
   "@t<error-page-tryagain-button-text>": "Tekrar dene",
+  "@t<home-description>": "<b>Projelerinizi hızlıca başlatmanın yeni, hızlı yolu - kuruluma ihtiyaç olmadan.</b>\nBu başlangıç paketi, dahili yerelleştirme, dosya sistemi yönlendirme, RTL desteği ve kutudan çıktığı gibi ışık/karanlık mod içerir. Ayrıca, iş akışınızı hızlandırmak için faydalı bir araç kiti elde edersiniz.\nZaman kaybetmeyi bırakın - <b>projenizi oluşturmak için odaklanın!</b>",
   "@t<home_meta": {
     "description>": "Next.js web uygulama şablon kodu - daha az kod yazın, vakit kaybını önleyin ve önemli şeylere odaklanın!",
     "title>": "Next.js Şablon Projesi: Önemli şeylere odaklanın!"

@@ -4,6 +4,7 @@
   "@t<error-page-help-line>": "If the issue persists, please contact the site administrator.",
   "@t<error-page-title>": "Oops!",
   "@t<error-page-tryagain-button-text>": "Try again",
+  "@t<home-description>": "<b>A new, fast way to kick off your projects — without the setup hassle.</b>\nThis starter includes built-in localization, file-system routing, RTL support, and light/dark mode out of the box. Plus, you get a helpful toolkit of utilities to boost your workflow.\nStop wasting time configuring things — <b>focus on building your project!</b>",
   "@t<home_meta": {
     "description>": "Next.js web application template code - write less code, stop wasting time setting up stuff, focus on important things!",
     "title>": "Next.js Template Project: Focus on important stuff!"
