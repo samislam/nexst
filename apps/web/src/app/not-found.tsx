@@ -33,12 +33,14 @@ const NotFoundPage = async () => {
             className="group flex items-center space-x-2 rounded-lg bg-green-600 px-6 py-3 text-white transition-colors hover:bg-green-700 dark:bg-green-700 dark:hover:bg-green-600"
           >
             <HomeIcon className="h-5 w-5 transition-transform group-hover:scale-110" />
-            <span>{t('@t<back-to-home>')}</span>
+            <span>{t('@t<not-found-page-back-to-home>')}</span>
           </Link>
           <BackButton>
             <Button className="group flex items-center space-x-2 rounded-lg bg-emerald-50 bg-white/10 px-6 py-6 text-white transition-colors hover:bg-white/20 dark:bg-emerald-700">
               <ArrowLeftIcon className="h-5 w-5 text-gray-800 transition-transform group-hover:translate-x-[-4px] dark:text-white" />
-              <span className="text-gray-800 dark:text-white">{t('@t<go-back>')}</span>
+              <span className="text-gray-800 dark:text-white">
+                {t('@t<not-found-page-back-button-text>')}
+              </span>
             </Button>
           </BackButton>
         </div>
