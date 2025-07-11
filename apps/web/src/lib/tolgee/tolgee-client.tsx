@@ -21,9 +21,9 @@ export const TolgeeNextProvider = (props: TolgeeNextProviderProps) => {
   const router = useRouter()
 
   useEffect(() => {
-    const { unsubscribe } = tolgeeSSR.on('update', () => {
+    const { unsubscribe } = tolgeeSSR.on('permanentChange', () => {
       // Refresh page when there is a translation update
-      // router.refresh()
+      router.refresh()
     })
 
     return () => unsubscribe()
