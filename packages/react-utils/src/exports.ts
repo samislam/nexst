@@ -17,6 +17,7 @@ export * from "./stores/create-locale-transition-store";
 export * from "./stores/create-multistep-togglable-store";
 export * from "./stores/create-togglable-store";
 export * from "./stores/create-togglable-with-state-store";
+export * from "./types/metadata-generator";
 export * from "./types/next-cookie";
 export * from "./types/page-props";
 export * from "./types/tailwind-types";
