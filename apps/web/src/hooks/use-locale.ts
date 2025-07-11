@@ -1,35 +1,37 @@
 'use client'
 
 import { useTolgee } from '@tolgee/react'
+import { useFullPath } from '@repo/react-utils'
 import { useEffect, useTransition } from 'react'
 import { AppLanguages } from '@/types/app.types'
-import { useParams, usePathname, useRouter } from 'next/navigation'
+import { useLocale as useLocaleNextIntl } from 'next-intl'
+import { changeLocale } from '@/lib/next-intl/change-language'
 
 export const useLocale = () => {
-  const params = useParams()
-  const locale = params.locale as AppLanguages
-  const router = useRouter()
-  const pathname = usePathname()
-  const { changeLanguage } = useTolgee()
+  const locale = useLocaleNextIntl() as AppLanguages
+  const fullpath = useFullPath()
+
+  const { changeLanguage: changeTolgeeLocale } = useTolgee()
   const [isSwitching, startTransition] = useTransition()
-  const changeLocale = (value: AppLanguages) => {
+
+  const handleChangeLocale = (value: AppLanguages) => {
     startTransition(() => {
       // Change the server components locale
-      router.replace(pathname.replace(locale, value), { scroll: false })
+      changeLocale(value, fullpath)
     })
   }
 
   useEffect(() => {
     return () => {
       // Change the client-side components locale
-      changeLanguage(locale)
+      changeTolgeeLocale(locale)
       document.documentElement.setAttribute('dir', locale === 'ar' ? 'rtl' : 'ltr')
     }
-  }, [changeLanguage, locale])
+  }, [changeTolgeeLocale, locale])
 
   return {
     locale,
     isSwitching,
-    changeLocale,
+    changeLocale: handleChangeLocale,
   }
 }
