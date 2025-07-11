@@ -3,7 +3,7 @@ import { getTranslate } from '@/lib/tolgee/tolgee-server'
 
 export const pageDefs = {
   home: {
-    label: '@t<home>',
+    title: '@t<home-title>',
     icon: 'mdi:mdiHome',
     href: '/',
     async meta() {
