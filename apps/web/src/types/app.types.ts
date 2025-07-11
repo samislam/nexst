@@ -1,6 +1,6 @@
 import appConfig from '@/config/app.config'
 import { StaticImageData } from 'next/image'
-import { AppLocaleRoutingDef } from './_misc'
+import { AppLocaleRoutingDef } from './_private'
 import { RequestConfig } from 'next-intl/server'
 
 type NextIntlRequestConfig = Pick<RequestConfig, 'formats' | 'timeZone' | 'now'>
