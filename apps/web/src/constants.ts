@@ -15,3 +15,5 @@ export const errorCodes = [
 ] as const
 
 export type AppErrorCodes = (typeof errorCodes)[number]
+
+export const LOCALE_COOKIE_NAME = 'NEXT_LOCALE'
