@@ -1,9 +1,21 @@
+import chalk from 'chalk'
+import { existsSync } from 'fs'
 import { concat } from 'concat-str'
 import { runCommand } from '@clscripts/cl-common'
+import { DotenvCli } from '@clscripts/dotenv-cli'
 import { select, confirm } from '@inquirer/prompts'
 import { TolgeeCli, TolgeeRunMode } from '@clscripts/tolgee-cli'
 
 async function main() {
+  const nodeEnv = process.env.NODE_ENV ?? 'development'
+  const possibleEnvFiles = [`.env.${nodeEnv}.local`, '.env.local', `.env.${nodeEnv}`, '.env']
+  const dotenvFile = possibleEnvFiles.find((file) => existsSync(file))
+  if (!dotenvFile) {
+    console.error("You don't have any environment file specified, please define one first!")
+    process.exit(-1)
+  }
+  console.log(chalk.cyanBright('Using environment file: '), chalk.bold.greenBright(dotenvFile))
+
   const mode = await select<TolgeeRunMode>({
     message: 'Choose an operation for the Tolgee-cli to execute:',
     choices: [
@@ -42,9 +54,12 @@ async function main() {
   }
 
   runCommand(
-    new TolgeeCli({
-      mode,
-      removeUnused,
+    new DotenvCli({
+      envFile: dotenvFile,
+      execute: new TolgeeCli({
+        mode,
+        removeUnused,
+      }).command,
     }).command
   )
 }

@@ -1,4 +1,3 @@
-import dotenv from 'dotenv'
 import { concat } from 'concat-str'
 
 /**
@@ -6,20 +5,13 @@ import { concat } from 'concat-str'
  *
  * @returns {string | undefined} The Tolgee Project ID if defined.
  */
-const TOLGEE_PROJECT_ID = () => process.env.TOLGEE_PROJECT_ID
-const TOLGEE_API_URL = () => process.env.NEXT_PUBLIC_TOLGEE_API_URL
-const TOLGEE_API_KEY = () => process.env.NEXT_PUBLIC_TOLGEE_API_KEY
-
-const loadEnvVariables = (envPath = '.env.local') => {
-  // Load environment variables if they are not already set.
-  if (!TOLGEE_PROJECT_ID() || !TOLGEE_API_URL() || !TOLGEE_API_KEY()) {
-    dotenv.config({ path: envPath })
-  }
-}
+const TOLGEE_PROJECT_ID = process.env.TOLGEE_PROJECT_ID
+const TOLGEE_API_URL = process.env.NEXT_PUBLIC_TOLGEE_API_URL
+const TOLGEE_API_KEY = process.env.NEXT_PUBLIC_TOLGEE_API_KEY
 
 const checkRequiredEnvVariables = () => {
   // Check that all required environment variables are set
-  if (!TOLGEE_PROJECT_ID()) {
+  if (!TOLGEE_PROJECT_ID) {
     console.error(
       concat(
         'TOLGEE_PROJECT_ID was not found in the environment variables.',
@@ -29,7 +21,7 @@ const checkRequiredEnvVariables = () => {
     process.exit(1)
   }
 
-  if (!TOLGEE_API_URL()) {
+  if (!TOLGEE_API_URL) {
     console.error(
       concat(
         'TOLGEE_API_URL was not found in the environment variables.',
@@ -39,7 +31,7 @@ const checkRequiredEnvVariables = () => {
     process.exit(1)
   }
 
-  if (!TOLGEE_API_KEY()) {
+  if (!TOLGEE_API_KEY) {
     console.error(
       concat(
         'TOLGEE_API_KEY was not found in the environment variables.',
@@ -49,9 +41,6 @@ const checkRequiredEnvVariables = () => {
     process.exit(1)
   }
 }
-
-// Load environment variables from the specified path
-loadEnvVariables()
 
 // Check if the required environment variables are present
 checkRequiredEnvVariables()
@@ -65,8 +54,8 @@ checkRequiredEnvVariables()
 
 export default {
   $schema: 'https://tolgee.io/cli-schema.json',
-  apiUrl: TOLGEE_API_URL(),
-  apiKey: TOLGEE_API_KEY(),
+  apiUrl: TOLGEE_API_URL,
+  apiKey: TOLGEE_API_KEY,
   format: 'JSON_TOLGEE',
   patterns: ['./src/**/*.ts?(x)'],
   extractor: './src/lib/tolgee/tolgee-extractor.mjs',
@@ -80,5 +69,5 @@ export default {
     ],
     forceMode: 'OVERRIDE',
   },
-  projectId: TOLGEE_PROJECT_ID(),
+  projectId: TOLGEE_PROJECT_ID,
 }
