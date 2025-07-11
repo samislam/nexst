@@ -1,12 +1,17 @@
 {
-  "@t<arabic>": "Arabic",
-  "@t<back-to-home>": "Back to home",
-  "@t<description_homepage>": "Website description",
-  "@t<english>": "English",
-  "@t<go-back>": "Go back",
-  "@t<home>": "Home",
-  "@t<not-found-page-description>": "The page you're looking for might have been moved, deleted, or might never have existed in the first place.\n\n",
-  "@t<not-found-page-title>": "Oops! This page has flown away\n\n",
-  "@t<title_homepage>": "Nexst website template",
-  "@t<turkish>": "Turkish"
+  "@t<error-page-backhome-button-text>": "Back Home",
+  "@t<error-page-description>": "An unexpected error has occurred!",
+  "@t<error-page-help-line>": "If the issue persists, please contact the site administrator.",
+  "@t<error-page-title>": "Oops!",
+  "@t<error-page-tryagain-button-text>": "Try again",
+  "@t<home_meta": {
+    "description>": "Next.js web application template code - write less code, stop wasting time setting up stuff, focus on important things!",
+    "title>": "Next.js Template Project: Focus on important stuff!"
+  },
+  "@t<home-title>": "Nexst web application template",
+  "@t<not-found-page-back-button-text>": "Go back",
+  "@t<not-found-page-back-to-home>": "Back Home",
+  "@t<not-found-page-description>": "The page you're looking for no longer exists. Perhaps it got removed, or it's never been there.",
+  "@t<not-found-page-title>": "Not found!",
+  "@t<switching-language-loading-screen-text>": "Changing language..."
 }

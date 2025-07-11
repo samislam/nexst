@@ -1,12 +1,17 @@
 {
-  "@t<arabic>": "Arapça",
-  "@t<back-to-home>": "Ana sayfaya dön",
-  "@t<description_homepage>": "Web sitesi açıklaması",
-  "@t<english>": "İngilizce",
-  "@t<go-back>": "Geri dön",
-  "@t<home>": "Ana Sayfa",
-  "@t<not-found-page-description>": "Aradığınız sayfa taşınmış, silinmiş veya hiç var olmamış olabilir.\n\n",
-  "@t<not-found-page-title>": "Hata! Bu sayfa uçup gitmiş\n\n",
-  "@t<title_homepage>": "Nexst web sitesi şablonu",
-  "@t<turkish>": "Türkçe"
+  "@t<error-page-backhome-button-text>": "Ana Sayfa",
+  "@t<error-page-description>": "Beklenmeyen bir hata oluştu!",
+  "@t<error-page-help-line>": "Sorun devam ederse, lütfen site yöneticisine başvurun.",
+  "@t<error-page-title>": "Hata!",
+  "@t<error-page-tryagain-button-text>": "Tekrar dene",
+  "@t<home_meta": {
+    "description>": "Next.js web uygulama şablon kodu - daha az kod yazın, vakit kaybını önleyin ve önemli şeylere odaklanın!",
+    "title>": "Next.js Şablon Projesi: Önemli şeylere odaklanın!"
+  },
+  "@t<home-title>": "Nexst web uygulama şablonu",
+  "@t<not-found-page-back-button-text>": "Geri dön",
+  "@t<not-found-page-back-to-home>": "Ana Sayfa",
+  "@t<not-found-page-description>": "Aradığınız sayfa artık mevcut değil. Belki kaldırıldı ya da hiç orada değildi.",
+  "@t<not-found-page-title>": "Bulunamadı!",
+  "@t<switching-language-loading-screen-text>": "Dil değiştiriliyor..."
 }

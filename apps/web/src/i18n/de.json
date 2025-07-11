@@ -1,0 +1,17 @@
+{
+  "@t<error-page-backhome-button-text>": "Zurück zur Startseite",
+  "@t<error-page-description>": "Ein unerwarteter Fehler ist aufgetreten!",
+  "@t<error-page-help-line>": "Wenn das Problem weiterhin besteht, wenden Sie sich bitte an den Websiteadministrator.",
+  "@t<error-page-title>": "Hoppla!",
+  "@t<error-page-tryagain-button-text>": "Erneut versuchen",
+  "@t<home_meta": {
+    "description>": "Next.js Webanwendungsvorlage - weniger Code schreiben, keine Zeit mit der Einrichtung verschwenden, auf die wichtigen Dinge konzentrieren!",
+    "title>": "Next.js-Vorlagenprojekt: Konzentrieren Sie sich auf das Wesentliche!"
+  },
+  "@t<home-title>": "Nexst-Webanwendungsvorlage",
+  "@t<not-found-page-back-button-text>": "Zurück",
+  "@t<not-found-page-back-to-home>": "Zurück zur Startseite",
+  "@t<not-found-page-description>": "Die Seite, nach der Sie suchen, existiert nicht mehr. Vielleicht wurde sie entfernt oder war niemals dort.",
+  "@t<not-found-page-title>": "Nicht gefunden!",
+  "@t<switching-language-loading-screen-text>": "Sprache wird geändert..."
+}

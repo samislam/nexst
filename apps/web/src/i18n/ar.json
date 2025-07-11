@@ -1,12 +1,17 @@
 {
-  "@t<arabic>": "العربية",
-  "@t<back-to-home>": "العودة إلى الصفحة الرئيسية",
-  "@t<description_homepage>": "وصف الموقع",
-  "@t<english>": "العربية",
-  "@t<go-back>": "ارجع",
-  "@t<home>": "الصفحة الرئيسية",
-  "@t<not-found-page-description>": "قد تكون الصفحة التي تبحث عنها قد تم نقلها أو حذفها أو ربما لم تكن موجودة في المقام الأول.\n\n",
-  "@t<not-found-page-title>": "عذرًا! هذه الصفحة غير موجودة",
-  "@t<title_homepage>": "قالب موقع Nexst",
-  "@t<turkish>": "التركية"
+  "@t<error-page-backhome-button-text>": "العودة إلى الصفحة الرئيسية",
+  "@t<error-page-description>": "حدث خطأ غير متوقع!",
+  "@t<error-page-help-line>": "إذا استمرت المشكلة، يرجى الاتصال بمسؤول الموقع.",
+  "@t<error-page-title>": "عذرًا!",
+  "@t<error-page-tryagain-button-text>": "حاول مرة أخرى",
+  "@t<home_meta": {
+    "description>": "قالب كود تطبيق ويب Next.js - اكتب كودًا أقل، توقف عن إضاعة الوقت في الإعدادات، ركز على الأشياء المهمة!",
+    "title>": "مشروع قالب Next.js: التركيز على الأشياء المهمة!"
+  },
+  "@t<home-title>": "قالب تطبيق الويب Nexst",
+  "@t<not-found-page-back-button-text>": "العودة",
+  "@t<not-found-page-back-to-home>": "العودة إلى الصفحة الرئيسية",
+  "@t<not-found-page-description>": "الصفحة التي تبحث عنها لم تعد موجودة. ربما تم إزالتها، أو لم تكن هناك أبداً.",
+  "@t<not-found-page-title>": "غير موجود!",
+  "@t<switching-language-loading-screen-text>": "انتظر قليلاً..."
 }
