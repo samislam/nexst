@@ -4,7 +4,7 @@ import { AppLanguages } from '@/types/app.types'
 import { LOCALE_COOKIE_NAME } from '@/constants'
 
 /**
- * Returns the current locale (language code) to be used server-side from the `locale` cookie if
+ * Returns the current locale (language code) to be used server-side from the next-intl cookie if
  * available. Falls back to the app default language.
  *
  * @returns {Promise<AppLanguages>} The current language code (e.g., 'en', 'ar').
