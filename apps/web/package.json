@@ -63,7 +63,6 @@
     "tailwind-merge": "^2.5.4",
     "framer-motion": "^11.11.17",
     "react-hook-form": "^7.53.2",
-    "postcss-load-config": "^6.0.1",
     "tailwindcss-animate": "^1.0.7",
     "use-is-mounted-hook": "^1.0.1",
     "nextjs-middleware-stack": "^1.0.2",
@@ -93,6 +92,7 @@
     "tailwindcss": "^3.4.17",
     "autoprefixer": "^10.4.21",
     "ts-essentials": "^10.1.1",
-    "eslint-config-next": "^15.3.4"
+    "eslint-config-next": "^15.3.4",
+    "postcss-load-config": "^6.0.1"
   }
 }
