@@ -29,7 +29,7 @@ export const useLocale = () => {
       document.documentElement.setAttribute('dir', locale === 'ar' ? 'rtl' : 'ltr')
       stopTransition()
     }
-  }, [changeTolgeeLocale, locale])
+  }, [changeTolgeeLocale, locale, stopTransition])
 
   return {
     locale,
