@@ -20,7 +20,8 @@
     },
     "setup": {
       "dependsOn": ["^setup"],
-      "cache": true
+      "cache": true,
+      "env": ["NODE_ENV"]
     },
     "build": {
       "dependsOn": ["^build"],

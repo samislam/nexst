@@ -18,7 +18,7 @@ echo "[DEPLOY] Installing dependencies..."
 pnpm install
 
 echo "[DEPLOY] Running setup..."
-pnpm run setup
+NODE_ENV=production pnpm run setup
 
 echo "[DEPLOY] Building apps..."
 pnpm run build
