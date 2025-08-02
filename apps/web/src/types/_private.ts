@@ -10,4 +10,4 @@ export type AppLocaleRoutingDef<L extends string> = StrictDeepOmit<
     never // DomainsConfig<readonly L[]> import from 'next-intl/routing'
   >,
   { locales: true; defaultLocale: true; localeCookie: true }
-> & { localeCookie?: Omit<CookieAttributes, 'name'> }
+> & { localeCookie: CookieAttributes }
