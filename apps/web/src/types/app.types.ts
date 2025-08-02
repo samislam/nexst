@@ -13,7 +13,7 @@ export interface AppConfig<L extends string> {
   fallbackLanguage: NoInfer<L>
   readonly languages: Array<L>
   appLogo: string | StaticImageData
-  i18nRoutingDef?: AppLocaleRoutingDef<L>
+  i18nRoutingDef: AppLocaleRoutingDef<L>
   i18nFormattersDefaults?: (
     requestLocale: Promise<string | undefined>
   ) => NextIntlRequestConfig | Promise<NextIntlRequestConfig>
