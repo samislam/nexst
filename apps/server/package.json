@@ -6,9 +6,6 @@
   "author": "Islam Yamor",
   "license": "Apache-2.0",
   "prettier": "@samislam/prettier-config",
-  "prisma": {
-    "seed": "tsx ./src/database/seed.ts"
-  },
   "scripts": {
     "dev": "tsx ./scripts/dev.ts",
     "lint": "tsx ./scripts/lint.ts",
