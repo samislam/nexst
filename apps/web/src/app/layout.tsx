@@ -7,9 +7,11 @@ import { ClientPlugger } from './client-plugger'
 import { AppLanguages } from '@/types/app.types'
 import { pageDefs } from '@/config/pages.config'
 import { NextIntlClientProvider } from 'next-intl'
+import { NuqsAdapter } from 'nuqs/adapters/next/app'
 import { MetadataGenerateFn } from '@repo/react-utils'
 import { getStaticData } from '@/lib/tolgee/tolgee-shared'
 import { TolgeeNextProvider } from '@/lib/tolgee/tolgee-client'
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 import { TolgeeLoadingScreen } from '@/components/common/tolgee-loading-screen'
 import { TanstackQueryProvider } from '@/lib/tanstack-query/tanstack-query-provider'
 import './globals.css'
@@ -29,14 +31,19 @@ export default async function RootLayout(props: Props) {
         <html dir={locale === 'ar' ? 'rtl' : 'ltr'} lang={locale} suppressHydrationWarning>
           <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
             <ThemeProvider
-              attribute="class"
               enableSystem
-              disableTransitionOnChange
+              attribute="class"
               defaultTheme={appConfig.defaultTheme}
+              disableTransitionOnChange
             >
-              <TanstackQueryProvider>{children}</TanstackQueryProvider>
-              <TolgeeLoadingScreen />
-              <ClientPlugger />
+              <TanstackQueryProvider>
+                <NuqsAdapter>
+                  {children}
+                  <ReactQueryDevtools initialIsOpen={false} />
+                  <TolgeeLoadingScreen />
+                  <ClientPlugger />
+                </NuqsAdapter>
+              </TanstackQueryProvider>
             </ThemeProvider>
           </body>
         </html>
