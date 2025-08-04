@@ -3,12 +3,14 @@
  */
 
 export * from "./components/back-button";
-export * from "./components/clickable";
 export * from "./components/lib-icon";
 export * from "./components/loading";
 export * from "./components/luc-icon";
 export * from "./components/material-icon";
 export * from "./components/motion";
+export * from "./components/scroll-link";
+export * from "./components/spanned-text";
+export * from "./components/stack-link";
 export * from "./hooks/use-animated-dots";
 export * from "./hooks/use-back";
 export * from "./hooks/use-fullpath";
