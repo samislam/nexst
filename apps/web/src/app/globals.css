@@ -70,3 +70,9 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+@layer components {
+  .clickable {
+    @apply origin-center scale-100 transform cursor-pointer transition-transform duration-300 focus:outline-none active:scale-110;
+  }
+}
