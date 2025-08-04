@@ -33,8 +33,8 @@ export default async function RootLayout(props: Props) {
             <ThemeProvider
               enableSystem
               attribute="class"
-              defaultTheme={appConfig.defaultTheme}
               disableTransitionOnChange
+              defaultTheme={appConfig.defaultTheme}
             >
               <TanstackQueryProvider>
                 <NuqsAdapter>
