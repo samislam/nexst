@@ -4,6 +4,7 @@ export const DUPLICATE_ERR = 'DUPLICATE_ERR'
 export const REF_ERR = 'REF_ERR'
 export const VALIDATION_ERR = 'VALIDATION_ERR'
 export const INCORRECT_CREDENTIALS = 'INCORRECT_CREDENTIALS'
+export const UNAUTHENTICATED = 'UNAUTHENTICATED'
 // ... add more
 
 // # Prisma Error codes
