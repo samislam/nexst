@@ -35,5 +35,6 @@ export const useLocale = () => {
     locale,
     isSwitching,
     changeLocale: handleChangeLocale,
+    dir: locale === 'ar' ? 'rtl' : 'ltr',
   }
 }
