@@ -1,5 +1,3 @@
-import { AxiosError, AxiosResponse } from 'axios'
-
 export type SuccessResult<T> = {
   success: true
   payload: T
@@ -14,24 +12,6 @@ export type FailureResult<C extends string = string> = {
 }
 
 export type ApiResult<T, C extends string = string> = SuccessResult<T> | FailureResult<C>
-
-export async function apiCall<T>(apiCall: Promise<AxiosResponse<T>>): Promise<ApiResult<T>> {
-  try {
-    const res = await apiCall
-    return {
-      success: true,
-      statusCode: res.status,
-      payload: res.data,
-    }
-  } catch (err) {
-    const axiosErr = err as AxiosError<{ error?: string }>
-    return {
-      success: false,
-      statusCode: axiosErr.response?.status ?? 500,
-      error: axiosErr.response?.data?.error ?? axiosErr.message,
-    }
-  }
-}
 
 export function apiResult<T, E extends object = Record<string, unknown>>(
   params: (SuccessResult<T> & E) | (FailureResult & E)
@@ -52,5 +32,28 @@ export function apiResult<T, E extends object = Record<string, unknown>>(
       statusCode,
       ...rest,
     } as const
+  }
+}
+
+export const apiFailureResult = <
+  C extends string = string,
+  E extends Record<string, unknown> = Record<string, unknown>,
+>(
+  params: E & Omit<FailureResult<C>, 'success'>
+): FailureResult<C> & E => {
+  return {
+    success: false,
+    ...params,
+    statusCode: params.statusCode ?? 500,
+  }
+}
+
+export const apiSuccessResult = <T, E extends Record<string, unknown> = Record<string, unknown>>(
+  params: E & Omit<SuccessResult<T>, 'success'>
+): SuccessResult<T> & E => {
+  return {
+    success: true,
+    ...params,
+    statusCode: params.statusCode ?? 200,
   }
 }
