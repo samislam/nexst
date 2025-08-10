@@ -19,7 +19,7 @@ export const Loading = (props: LoadingProps) => {
     iconClassName,
     labelClassName,
     horizontal = false,
-    loadingIcon = 'lucide:RefreshCcwIcon',
+    loadingIcon = 'mdi:mdiLoading',
   } = props
 
   return (
