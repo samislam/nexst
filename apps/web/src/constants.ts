@@ -2,6 +2,9 @@
 export const UNKNOWN_ERR = 'UNKNOWN_ERR'
 export const DUPLICATE_ERR = 'DUPLICATE_ERR'
 export const REF_ERR = 'REF_ERR'
+export const VALIDATION_ERR = 'VALIDATION_ERR'
+export const INCORRECT_CREDENTIALS = 'INCORRECT_CREDENTIALS'
+// ... add more
 
 // # Prisma Error codes
 export const PRISMA_DUPLICATE_ERR = 'P2002'
@@ -16,4 +19,4 @@ export const errorCodes = [
 
 export type AppErrorCodes = (typeof errorCodes)[number]
 
-export const LOCALE_COOKIE_NAME = 'NEXT_LOCALE'
+export const LOCALE_COOKIE = 'NEXT_LOCALE'
