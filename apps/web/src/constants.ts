@@ -13,9 +13,12 @@ export const PRISMA_NOT_FOUND_ERR = 'P2025'
 export const PRISMA_REF_ERR = 'P2003'
 
 export const errorCodes = [
-  UNKNOWN_ERR, //
+  UNKNOWN_ERR,
   DUPLICATE_ERR,
   REF_ERR,
+  VALIDATION_ERR,
+  INCORRECT_CREDENTIALS,
+  UNAUTHENTICATED,
 ] as const
 
 export type AppErrorCodes = (typeof errorCodes)[number]
