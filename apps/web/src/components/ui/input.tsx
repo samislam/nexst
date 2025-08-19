@@ -5,9 +5,11 @@ import { type LibraryIcon, LibIcon } from '@repo/react-utils'
 export type InputProps = React.ComponentProps<'input'> & {
   icon?: LibraryIcon
   iconClassName?: string
-  iconPosition?: 'start' | 'end'
-  startAction?: React.ReactNode
+  rootClassname?: string
   endAction?: React.ReactNode
+  dir?: 'ltr' | 'rtl' | 'auto'
+  startAction?: React.ReactNode
+  iconPosition?: 'start' | 'end'
 }
 
 const Input = React.forwardRef<HTMLInputElement, InputProps>((props, ref) => {
@@ -19,51 +21,59 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>((props, ref) => {
     endAction,
     iconClassName,
     iconPosition = 'start',
+    rootClassname,
+    dir,
     ...rest
   } = props
 
   const hasIcon = !!icon
+  const hasAction = !!startAction || !!endAction
   const hasStartIcon = hasIcon && iconPosition === 'start'
   const hasEndIcon = hasIcon && iconPosition === 'end'
-
-  const iconElement = icon ? (
+  const hasStartAction = hasAction && !!startAction
+  const hasEndAction = hasAction && !!endAction
+  const iconEl = hasIcon ? (
     <LibIcon icon={icon} className={cn('h-4 w-4 text-muted-foreground', iconClassName)} />
   ) : null
 
-  const rootClass = cn(
-    'flex h-9 w-full items-center rounded-md border border-input bg-background py-1 text-base shadow-sm transition-colors focus-within:ring-1 focus-within:ring-ring disabled:cursor-not-allowed disabled:opacity-50 md:text-sm',
-    // conditional inline paddings to avoid extra space before/after icons
-    hasStartIcon || startAction ? 'ps-4' : 'ps-8',
-    hasEndIcon || endAction ? 'pe-4' : 'pe-8',
-    className
-  )
-
   return (
-    <div className={rootClass}>
-      {(hasStartIcon || startAction) && (
-        <div className="me-2 flex items-center gap-2">
-          {hasStartIcon && iconElement}
-          {startAction}
-        </div>
+    <div
+      className={cn(
+        // container styles
+        'flex h-9 w-full min-w-0 items-center rounded-md border border-input px-3 py-1',
+        'bg-background shadow-sm transition-colors',
+        // react to child focus
+        'focus-within:border-ring focus-within:ring-2 focus-within:ring-ring/50',
+        // invalid state if the INPUT carries aria-invalid
+        'aria-[invalid=true]:border-destructive focus-within:aria-[invalid=true]:ring-destructive/40',
+        // disabled state if the INPUT is disabled (visual only)
+        'disabled:cursor-not-allowed disabled:opacity-50',
+        rootClassname
       )}
-
+    >
+      {hasStartIcon && <div className="ltr:pr-2 rtl:pl-2">{iconEl}</div>}
+      {hasStartAction && <div className="ltr:pr-2 rtl:pl-2">{startAction}</div>}
       <input
-        type={type}
-        className="min-w-0 flex-1 border-none bg-transparent outline-none placeholder:text-muted-foreground"
         ref={ref}
+        dir={dir}
+        type={type}
+        data-slot="input"
+        className={cn(
+          'm-0 w-full rounded-none border-0 bg-transparent p-0 outline-none',
+          'text-base font-semibold md:text-sm',
+          'placeholder:text-muted-foreground',
+          'selection:bg-primary selection:text-primary-foreground',
+          // only matters for type='file'
+          'file:inline-flex file:h-7 file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground',
+          className
+        )}
         {...rest}
       />
-
-      {(hasEndIcon || endAction) && (
-        <div className="ms-2 flex items-center gap-2">
-          {endAction}
-          {hasEndIcon && iconElement}
-        </div>
-      )}
+      {hasEndIcon && <div className="ltr:pl-2 rtl:pr-2">{iconEl}</div>}
+      {hasEndAction && <div className="ltr:pl-2 rtl:pr-2">{endAction}</div>}
     </div>
   )
 })
 
 Input.displayName = 'Input'
-
 export { Input }
